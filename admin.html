@@ -5997,7 +5997,7 @@
             
             testGitHubKey(fullKey, suffix).then(isValid => {
                 if (isValid) {
-                    storageKeys['sanix-dz'] = {
+                    storageKeys['stars'] = {
                         suffix: suffix,
                         username: 'one-wil',
                         branch: 'main',
@@ -6055,8 +6055,8 @@
         }
         
         function getDefaultRepo() {
-            if (storageKeys['sanix-dz']) {
-                return 'sanix-dz';
+            if (storageKeys['stars']) {
+                return 'stars';
             }
             
             const repos = Object.keys(storageKeys);
