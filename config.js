@@ -184,7 +184,7 @@ const STORE_CONFIG = {
       "colorImages": {
         "أسود": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778238518007-أسود-1778238812961-Messenger-creation-6EA5AF67-8692-4E49-B8E8-0CA2B0BC96CF.jpeg"
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778238518007-أسود-1778238812961-Messenger-creation-6EA5AF67-8692-4E49-B8E8-0CA2B0BC96CF.jpeg"
           ],
           "ageRanges": [
             {
@@ -206,7 +206,7 @@ const STORE_CONFIG = {
         },
         "رمادي": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778238518007-رمادي-1778238854917-Messenger-creation-37FFDF3B-1672-4523-9137-8D369929585F.jpeg"
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778238518007-رمادي-1778238854917-Messenger-creation-37FFDF3B-1672-4523-9137-8D369929585F.jpeg"
           ],
           "ageRanges": [
             {
@@ -251,7 +251,7 @@ const STORE_CONFIG = {
         }
       },
       "createdAt": "2026-05-08T11:08:38.007Z",
-      "image": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778238518007-1778238752545-Messenger-creation-37FFDF3B-1672-4523-9137-8D369929585F.jpeg",
+      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778238518007-1778238752545-Messenger-creation-37FFDF3B-1672-4523-9137-8D369929585F.jpeg",
       "updatedAt": "2026-05-08T11:32:02.679Z"
     },
     "1778239126878": {
@@ -274,7 +274,7 @@ const STORE_CONFIG = {
       "colorImages": {
         "أبيض": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778239126878-أبيض-1778239631074-Messenger-creation-408051E2-5D87-46C2-96F2-DBAC792167FB.jpeg"
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778239126878-أبيض-1778239631074-Messenger-creation-408051E2-5D87-46C2-96F2-DBAC792167FB.jpeg"
           ],
           "ageRanges": [
             {
@@ -296,7 +296,7 @@ const STORE_CONFIG = {
         },
         "أسود": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778239126878-أسود-1778239655886-Messenger-creation-2437459D-A810-4853-B647-DB2C2D0BD6EC.jpeg"
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778239126878-أسود-1778239655886-Messenger-creation-2437459D-A810-4853-B647-DB2C2D0BD6EC.jpeg"
           ],
           "ageRanges": [
             {
@@ -322,7 +322,7 @@ const STORE_CONFIG = {
         "guide": {}
       },
       "createdAt": "2026-05-08T11:18:46.878Z",
-      "image": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778239126878-1778239561305-Messenger-creation-2437459D-A810-4853-B647-DB2C2D0BD6EC.jpeg",
+      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778239126878-1778239561305-Messenger-creation-2437459D-A810-4853-B647-DB2C2D0BD6EC.jpeg",
       "updatedAt": "2026-05-08T11:29:42.336Z"
     },
     "1778244770962": {
@@ -344,7 +344,7 @@ const STORE_CONFIG = {
       "colorImages": {
         "أبيض": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778244770962-أبيض-1778244898209-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg"
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778244770962-أبيض-1778244898209-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg"
           ],
           "ageRanges": [
             {
@@ -361,7 +361,7 @@ const STORE_CONFIG = {
         },
         "أسود": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778244770962-أسود-1778244929756-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg"
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778244770962-أسود-1778244929756-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg"
           ],
           "ageRanges": [
             {
@@ -382,7 +382,7 @@ const STORE_CONFIG = {
         "guide": {}
       },
       "createdAt": "2026-05-08T12:52:50.962Z",
-      "image": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778244770962-1778244812749-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg",
+      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1778244770962-1778244812749-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg",
       "updatedAt": "2026-05-08T12:54:45.269Z"
     }
   },
@@ -662,13 +662,13 @@ const STORE_CONFIG = {
     "promoDiscountProducts": []
   },
   "STORE_INFO": {
-    "name": "SANIX-DZ",
+    "name": "stars",
     "tagline": "أحدث الموديلات لسنة 2026",
     "phoneNumbers": [
       "0778506974",
       "0792946548"
     ],
-    "logo": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/store-logo-1778244567755-file-00000000f55c722fa6802d1544ea54d1.png",
+    "logo": "https://raw.githubusercontent.com/one-wil/stars/main/images/store-logo-1778244567755-file-00000000f55c722fa6802d1544ea54d1.png",
     "facebookUrl": "",
     "instagramUrl": "https://www.instagram.com/sanix_dz?igsh=MXY1a2w4am0yems5cA%3D%3D&utm_source=qr",
     "messengerUrl": "",
