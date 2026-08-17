@@ -1,0 +1,1710 @@
+
+// =============================================================================
+// ⚙️ ملف الإعدادات الرئيسي للمتجر
+// =============================================================================
+
+const STORE_CONFIG = {
+  "PRODUCTS": {
+    "1778182443274": {
+      "name": "Ensemble POLO",
+      "price": 5500,
+      "description": "",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "Olive Green-black",
+        "Black-olive Geen",
+        "Beige - Black",
+        "Gray-black"
+      ],
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "Olive Green-black": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/suifrab/main/images/product-1778182443274-Olive%20Green-black-1778183913806-Messenger-creation-DA7E8AFE-784D-48C2-821E-C16D8C29DECF.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XL"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        },
+        "Black-olive Geen": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/suifrab/main/images/product-1778182443274-Black-olive%20Geen-1778183941777-Messenger-creation-BFECA40B-57E0-4596-BD25-4F9D45BA3562.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XL"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        },
+        "Beige - Black": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/suifrab/main/images/product-1778182443274-Beige%20-%20Black-1778184041964-Messenger-creation-810CA979-D104-4003-AC53-8D1BA722871C.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XL"
+            },
+            {
+              "ageFrom": "   ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        },
+        "Gray-black": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/suifrab/main/images/product-1778182443274-Gray-black-1778184152098-Messenger-creation-25516B0A-A522-42F1-9AB6-57299C553605.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XL"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": false,
+        "guide": {}
+      },
+      "createdAt": "2026-05-07T19:34:03.274Z",
+      "image": "https://raw.githubusercontent.com/one-wil/suifrab/main/images/product-1778182443274-1778182589626-Messenger-creation-810CA979-D104-4003-AC53-8D1BA722871C.jpeg",
+      "updatedAt": "2026-05-07T19:50:58.095Z"
+    },
+    "1778238518007": {
+      "name": "Ensemble Polo (t-shirt-short)",
+      "price": 5300,
+      "description": "",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "أسود",
+        "رمادي"
+      ],
+      "availableSizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "أسود": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778238518007-أسود-1778238812961-Messenger-creation-6EA5AF67-8692-4E49-B8E8-0CA2B0BC96CF.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            }
+          ]
+        },
+        "رمادي": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778238518007-رمادي-1778238854917-Messenger-creation-37FFDF3B-1672-4523-9137-8D369929585F.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": true,
+        "guide": {
+          "S": {
+            "heightFrom": 160,
+            "heightTo": 170,
+            "weightFrom": 50,
+            "weightTo": 60
+          },
+          "M": {
+            "heightFrom": 170,
+            "heightTo": 177,
+            "weightFrom": 60,
+            "weightTo": 75
+          },
+          "L": {
+            "heightFrom": 178,
+            "heightTo": 185,
+            "weightFrom": 69,
+            "weightTo": 80
+          }
+        }
+      },
+      "createdAt": "2026-05-08T11:08:38.007Z",
+      "image": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778238518007-1778238752545-Messenger-creation-37FFDF3B-1672-4523-9137-8D369929585F.jpeg",
+      "updatedAt": "2026-05-08T11:32:02.679Z"
+    },
+    "1778239126878": {
+      "name": "T-shirt ",
+      "price": 2300,
+      "description": "",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "أبيض",
+        "أسود"
+      ],
+      "availableSizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "أبيض": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778239126878-أبيض-1778239631074-Messenger-creation-408051E2-5D87-46C2-96F2-DBAC792167FB.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            }
+          ]
+        },
+        "أسود": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778239126878-أسود-1778239655886-Messenger-creation-2437459D-A810-4853-B647-DB2C2D0BD6EC.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": false,
+        "guide": {}
+      },
+      "createdAt": "2026-05-08T11:18:46.878Z",
+      "image": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778239126878-1778239561305-Messenger-creation-2437459D-A810-4853-B647-DB2C2D0BD6EC.jpeg",
+      "updatedAt": "2026-05-08T11:29:42.336Z"
+    },
+    "1778244770962": {
+      "name": "T-shirt sanix",
+      "price": 2300,
+      "description": "",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "أبيض",
+        "أسود"
+      ],
+      "availableSizes": [
+        "S",
+        "M"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "أبيض": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778244770962-أبيض-1778244898209-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            }
+          ]
+        },
+        "أسود": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778244770962-أسود-1778244929756-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "S"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "M"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": false,
+        "guide": {}
+      },
+      "createdAt": "2026-05-08T12:52:50.962Z",
+      "image": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/product-1778244770962-1778244812749-Messenger-creation-DBC61123-8E41-4C75-933B-A5397461B678.jpeg",
+      "updatedAt": "2026-05-08T12:54:45.269Z"
+    }
+  },
+  "PRODUCT_ORDER": {
+    "1778182443274": 3,
+    "1778238518007": 1,
+    "1778239126878": 4,
+    "1778244770962": 2
+  },
+  "DELIVERY_PRICES": {
+    "01 - أدرار": {
+      "home": 1100,
+      "desk": 600
+    },
+    "02 - الشلف": {
+      "home": 700,
+      "desk": 400
+    },
+    "03 - الأغواط": {
+      "home": 900,
+      "desk": 600
+    },
+    "04 - أم البواقي": {
+      "home": 650,
+      "desk": 400
+    },
+    "05 - باتنة": {
+      "home": 700,
+      "desk": 400
+    },
+    "06 - بجاية": {
+      "home": 700,
+      "desk": 400
+    },
+    "07 - بسكرة": {
+      "home": 900,
+      "desk": 500
+    },
+    "08 - بشار": {
+      "home": 1100,
+      "desk": 600
+    },
+    "09 - البليدة": {
+      "home": 500,
+      "desk": 250
+    },
+    "10 - البويرة": {
+      "home": 700,
+      "desk": 400
+    },
+    "11 - تمنراست": {
+      "home": 1300,
+      "desk": 800
+    },
+    "12 - تبسة": {
+      "home": 700,
+      "desk": 400
+    },
+    "13 - تلمسان": {
+      "home": 800,
+      "desk": 400
+    },
+    "14 - تيارت": {
+      "home": 800,
+      "desk": 400
+    },
+    "15 - تيزي وزو": {
+      "home": 700,
+      "desk": 400
+    },
+    "16 - الجزائر": {
+      "home": 500,
+      "desk": 250
+    },
+    "17 - الجلفة": {
+      "home": 900,
+      "desk": 500
+    },
+    "18 - جيجل": {
+      "home": 700,
+      "desk": 400
+    },
+    "19 - سطيف": {
+      "home": 700,
+      "desk": 400
+    },
+    "20 - سعيدة": {
+      "home": 800,
+      "desk": 400
+    },
+    "21 - سكيكدة": {
+      "home": 600,
+      "desk": 400
+    },
+    "22 - سيدي بلعباس": {
+      "home": 700,
+      "desk": 400
+    },
+    "23 - عنابة": {
+      "home": 700,
+      "desk": 400
+    },
+    "24 - قالمة": {
+      "home": 600,
+      "desk": 400
+    },
+    "25 - قسنطينة": {
+      "home": 600,
+      "desk": 400
+    },
+    "26 - المدية": {
+      "home": 700,
+      "desk": 400
+    },
+    "27 - مستغانم": {
+      "home": 700,
+      "desk": 400
+    },
+    "28 - المسيلة": {
+      "home": 800,
+      "desk": 400
+    },
+    "29 - معسكر": {
+      "home": 700,
+      "desk": 400
+    },
+    "30 - ورقلة": {
+      "home": 900,
+      "desk": 500
+    },
+    "31 - وهران": {
+      "home": 800,
+      "desk": 400
+    },
+    "32 - البيض": {
+      "home": 800,
+      "desk": 500
+    },
+    "33 - إليزي": {
+      "home": 1300,
+      "desk": 600
+    },
+    "34 - برج بوعريريج": {
+      "home": 700,
+      "desk": 400
+    },
+    "35 - بومرداس": {
+      "home": 700,
+      "desk": 400
+    },
+    "36 - الطارف": {
+      "home": 700,
+      "desk": 400
+    },
+    "37 - تندوف": {
+      "home": 1300,
+      "desk": 600
+    },
+    "38 - تيسمسيلت": {
+      "home": 800,
+      "desk": 400
+    },
+    "39 - الوادي": {
+      "home": 900,
+      "desk": 500
+    },
+    "40 - خنشلة": {
+      "home": 700,
+      "desk": 500
+    },
+    "41 - سوق أهراس": {
+      "home": 700,
+      "desk": 400
+    },
+    "42 - تيبازة": {
+      "home": 700,
+      "desk": 400
+    },
+    "43 - ميلة": {
+      "home": 700,
+      "desk": 450
+    },
+    "44 - عين الدفلى": {
+      "home": 700,
+      "desk": 400
+    },
+    "45 - النعامة": {
+      "home": 800,
+      "desk": 500
+    },
+    "46 - عين تموشنت": {
+      "home": 800,
+      "desk": 400
+    },
+    "47 - غرداية": {
+      "home": 900,
+      "desk": 500
+    },
+    "48 - غليزان": {
+      "home": 700,
+      "desk": 400
+    },
+    "49 - تيميمون": {
+      "home": 1100,
+      "desk": 600
+    },
+    "50 - برج باجي مختار": {
+      "home": 1200,
+      "desk": 650
+    },
+    "51 - أولاد جلال": {
+      "home": 900,
+      "desk": 500
+    },
+    "52 - بني عباس": {
+      "home": 1100,
+      "desk": 600
+    },
+    "53 - عين صالح": {
+      "home": 1300,
+      "desk": 700
+    },
+    "54 - عين قزام": {
+      "home": 1300,
+      "desk": 700
+    },
+    "55 - توقرت": {
+      "home": 900,
+      "desk": 550
+    },
+    "56 - جانت": {
+      "home": 1100,
+      "desk": 500
+    },
+    "57 - المغير": {
+      "home": 900,
+      "desk": 550
+    },
+    "58 - المنيعة": {
+      "home": 1100,
+      "desk": 400
+    }
+  },
+  "FREE_DELIVERY": {
+    "desk": {
+      "enabled": true,
+      "minQuantity": 1,
+      "wilayas": [],
+      "minAmount": 0
+    },
+    "home": {
+      "enabled": false,
+      "minQuantity": 1,
+      "wilayas": [],
+      "minAmount": 0
+    },
+    "freeDeliveryProducts": [
+      1765137505304,
+      1765145035052,
+      1765145814607,
+      1778182443274,
+      1778238518007,
+      1778239126878,
+      1778244770962
+    ]
+  },
+  "DISCOUNTS": {
+    "enableQuantityDiscount": false,
+    "minQuantityForDiscount": 1,
+    "discountPerItem": 500,
+    "discountScope": "selected",
+    "discountProducts": [],
+    "enablePromotionalDiscount": false,
+    "promotionalDiscountPercent": 20,
+    "promotionalDiscountedPrice": null,
+    "promoDiscountScope": "selected",
+    "promoDiscountProducts": []
+  },
+  "STORE_INFO": {
+    "name": "SANIX-DZ",
+    "tagline": "أحدث الموديلات لسنة 2026",
+    "phoneNumbers": [
+      "0778506974",
+      "0792946548"
+    ],
+    "logo": "https://raw.githubusercontent.com/one-wil/sanix-dz/main/images/store-logo-1778244567755-file-00000000f55c722fa6802d1544ea54d1.png",
+    "facebookUrl": "",
+    "instagramUrl": "https://www.instagram.com/sanix_dz?igsh=MXY1a2w4am0yems5cA%3D%3D&utm_source=qr",
+    "messengerUrl": "",
+    "viberNumber": "",
+    "whatsappNumber": "213778506974",
+    "whatsappUrl": "https://wa.me/213778506974",
+    "tiktokUrl": "",
+    "storeIcon": "-",
+    "storeTitle": "-"
+  },
+  "GOOGLE_SHEETS": {
+    "url": "https://docs.google.com/spreadsheets/d/1B6um1tNw0Uh4NJvLjF5zUX6palzubXv1UeH5gSIt_Go/edit?gid=774585379#gid=774585379",
+    "description": "  جدول الطلبات",
+    "autoUpdate": true
+  },
+  "AVAILABLE_COLORS": [
+    "أبيض",
+    "أسود",
+    "أحمر",
+    "أزرق",
+    "أخضر",
+    "وردي",
+    "رمادي",
+    "أصفر",
+    "vert motard",
+    "Vert pistache",
+    "Beige clair",
+    "Marron",
+    "Marron clair",
+    "Vert  Kaki",
+    "Olive Green-black",
+    "Black-olive Geen",
+    "Beige - Black",
+    "Gray-black"
+  ],
+  "AVAILABLE_SIZES": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "XXXL",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "38-40",
+    "42-44",
+    "46-48"
+  ],
+  "SIZE_GUIDE": {
+    "38": {
+      "heightFrom": 150,
+      "heightTo": 160,
+      "weightFrom": 50,
+      "weightTo": 70,
+      "enabled": false
+    },
+    "39": {
+      "heightFrom": 152,
+      "heightTo": 162,
+      "weightFrom": 53,
+      "weightTo": 74,
+      "enabled": false
+    },
+    "40": {
+      "heightFrom": 154,
+      "heightTo": 164,
+      "weightFrom": 56,
+      "weightTo": 78,
+      "enabled": false
+    },
+    "41": {
+      "heightFrom": 156,
+      "heightTo": 166,
+      "weightFrom": 59,
+      "weightTo": 82,
+      "enabled": false
+    },
+    "42": {
+      "heightFrom": 158,
+      "heightTo": 168,
+      "weightFrom": 62,
+      "weightTo": 86,
+      "enabled": false
+    },
+    "43": {
+      "heightFrom": 160,
+      "heightTo": 170,
+      "weightFrom": 65,
+      "weightTo": 90,
+      "enabled": false
+    },
+    "44": {
+      "heightFrom": 162,
+      "heightTo": 172,
+      "weightFrom": 68,
+      "weightTo": 94,
+      "enabled": false
+    },
+    "45": {
+      "heightFrom": 164,
+      "heightTo": 174,
+      "weightFrom": 71,
+      "weightTo": 98,
+      "enabled": false
+    },
+    "46": {
+      "heightFrom": 166,
+      "heightTo": 176,
+      "weightFrom": 74,
+      "weightTo": 102,
+      "enabled": false
+    },
+    "47": {
+      "heightFrom": 168,
+      "heightTo": 178,
+      "weightFrom": 77,
+      "weightTo": 106,
+      "enabled": false
+    },
+    "48": {
+      "heightFrom": 170,
+      "heightTo": 180,
+      "weightFrom": 80,
+      "weightTo": 110,
+      "enabled": false
+    },
+    "49": {
+      "heightFrom": 172,
+      "heightTo": 182,
+      "weightFrom": 83,
+      "weightTo": 114,
+      "enabled": false
+    },
+    "XS": {
+      "heightFrom": 150,
+      "heightTo": 160,
+      "weightFrom": 40,
+      "weightTo": 55,
+      "enabled": true
+    },
+    "S": {
+      "heightFrom": 120,
+      "heightTo": 130,
+      "weightFrom": 14,
+      "weightTo": 16,
+      "enabled": false
+    },
+    "M": {
+      "heightFrom": 130,
+      "heightTo": 150,
+      "weightFrom": 16,
+      "weightTo": 22,
+      "enabled": false
+    },
+    "L": {
+      "heightFrom": 180,
+      "heightTo": 195,
+      "weightFrom": 70,
+      "weightTo": 90,
+      "enabled": false
+    },
+    "XL": {
+      "heightFrom": 185,
+      "heightTo": 200,
+      "weightFrom": 85,
+      "weightTo": 110,
+      "enabled": false
+    },
+    "XXL": {
+      "heightFrom": 190,
+      "heightTo": 205,
+      "weightFrom": 95,
+      "weightTo": 120,
+      "enabled": false
+    },
+    "S1": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "S2": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "S3": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "M1": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "M2": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "M3": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "XXXL": {
+      "heightFrom": 195,
+      "heightTo": 210,
+      "weightFrom": 105,
+      "weightTo": 140,
+      "enabled": false
+    }
+  },
+  "PIXEL_CODES": {
+    "facebook": {
+      "enabled": true,
+      "pixelId": "1399644568464007",
+      "events": {
+        "pageView": true,
+        "addToCart": true,
+        "purchase": true,
+        "initiateCheckout": true,
+        "viewContent": true
+      }
+    },
+    "tiktok": {
+      "enabled": true,
+      "pixelId": "",
+      "events": {
+        "pageView": true,
+        "addToCart": true,
+        "purchase": true,
+        "initiateCheckout": true,
+        "viewContent": true
+      }
+    }
+  },
+  "POINTS_SYSTEM": {
+    "currentPoints": 996,
+    "remainingDays": 22,
+    "lastReset": "2026-08-05T15:56:39.328Z",
+    "planType": "مجاني",
+    "monthlyPoints": 1000,
+    "resetPeriod": 30,
+    "currentMonthDays": 30,
+    "lastUpdate": "2025-12-13T18:59:22.674Z",
+    "pointsHistory": [
+      {
+        "date": "2025-12-13T12:05:36.186Z",
+        "action": "SYNC_DATA",
+        "pointsBefore": 484,
+        "pointsAfter": 482,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T12:06:34.383Z",
+        "action": "UPLOAD_IMAGE",
+        "pointsBefore": 482,
+        "pointsAfter": 481,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T12:09:33.670Z",
+        "action": "SYNC_DATA",
+        "pointsBefore": 484,
+        "pointsAfter": 482,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T12:16:51.121Z",
+        "action": "SYNC_DATA",
+        "pointsBefore": 484,
+        "pointsAfter": 482,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T12:29:49.030Z",
+        "action": "FULL_SYNC",
+        "pointsBefore": 484,
+        "pointsAfter": 482,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T14:37:02.011Z",
+        "action": "FULL_SYNC",
+        "pointsBefore": 484,
+        "pointsAfter": 482,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T14:37:46.228Z",
+        "action": "SYNC_DATA",
+        "pointsBefore": 482,
+        "pointsAfter": 480,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T14:41:17.205Z",
+        "action": "UPLOAD_IMAGE",
+        "pointsBefore": 484,
+        "pointsAfter": 483,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T14:41:27.220Z",
+        "action": "FULL_SYNC",
+        "pointsBefore": 483,
+        "pointsAfter": 481,
+        "user": "admin"
+      },
+      {
+        "date": "2025-12-13T14:46:48.645Z",
+        "action": "SYNC_DATA",
+        "pointsBefore": 481,
+        "pointsAfter": 479,
+        "user": "admin"
+      }
+    ],
+    "lastUpdated": "2026-08-13T21:01:57.192Z"
+  },
+  "FREE_DELIVERY_PRODUCTS": [
+    1765456782838
+  ],
+  "config": {
+    "PRODUCTS": {},
+    "DELIVERY_PRICES": {
+      "01 - أدرار": {
+        "home": 1100,
+        "desk": 600
+      },
+      "02 - الشلف": {
+        "home": 700,
+        "desk": 400
+      },
+      "03 - الأغواط": {
+        "home": 1000,
+        "desk": 600
+      },
+      "04 - أم البواقي": {
+        "home": 650,
+        "desk": 400
+      },
+      "05 - باتنة": {
+        "home": 700,
+        "desk": 400
+      },
+      "06 - بجاية": {
+        "home": 700,
+        "desk": 400
+      },
+      "07 - بسكرة": {
+        "home": 900,
+        "desk": 500
+      },
+      "08 - بشار": {
+        "home": 1100,
+        "desk": 600
+      },
+      "09 - البليدة": {
+        "home": 500,
+        "desk": 250
+      },
+      "10 - البويرة": {
+        "home": 700,
+        "desk": 400
+      },
+      "11 - تمنراست": {
+        "home": 1300,
+        "desk": 800
+      },
+      "12 - تبسة": {
+        "home": 700,
+        "desk": 400
+      },
+      "13 - تلمسان": {
+        "home": 800,
+        "desk": 400
+      },
+      "14 - تيارت": {
+        "home": 800,
+        "desk": 400
+      },
+      "15 - تيزي وزو": {
+        "home": 700,
+        "desk": 400
+      },
+      "16 - الجزائر": {
+        "home": 500,
+        "desk": 250
+      },
+      "17 - الجلفة": {
+        "home": 900,
+        "desk": 500
+      },
+      "18 - جيجل": {
+        "home": 700,
+        "desk": 400
+      },
+      "19 - سطيف": {
+        "home": 700,
+        "desk": 400
+      },
+      "20 - سعيدة": {
+        "home": 800,
+        "desk": 400
+      },
+      "21 - سكيكدة": {
+        "home": 600,
+        "desk": 400
+      },
+      "22 - سيدي بلعباس": {
+        "home": 700,
+        "desk": 400
+      },
+      "23 - عنابة": {
+        "home": 700,
+        "desk": 400
+      },
+      "24 - قالمة": {
+        "home": 600,
+        "desk": 400
+      },
+      "25 - قسنطينة": {
+        "home": 600,
+        "desk": 400
+      },
+      "26 - المدية": {
+        "home": 700,
+        "desk": 400
+      },
+      "27 - مستغانم": {
+        "home": 700,
+        "desk": 400
+      },
+      "28 - المسيلة": {
+        "home": 800,
+        "desk": 400
+      },
+      "29 - معسكر": {
+        "home": 700,
+        "desk": 400
+      },
+      "30 - ورقلة": {
+        "home": 900,
+        "desk": 500
+      },
+      "31 - وهران": {
+        "home": 800,
+        "desk": 400
+      },
+      "32 - البيض": {
+        "home": 800,
+        "desk": 500
+      },
+      "33 - إليزي": {
+        "home": 1300,
+        "desk": 600
+      },
+      "34 - برج بوعريريج": {
+        "home": 700,
+        "desk": 400
+      },
+      "35 - بومرداس": {
+        "home": 700,
+        "desk": 400
+      },
+      "36 - الطارف": {
+        "home": 700,
+        "desk": 400
+      },
+      "37 - تندوف": {
+        "home": 1300,
+        "desk": 600
+      },
+      "38 - تيسمسيلت": {
+        "home": 800,
+        "desk": 400
+      },
+      "39 - الوادي": {
+        "home": 900,
+        "desk": 500
+      },
+      "40 - خنشلة": {
+        "home": 700,
+        "desk": 500
+      },
+      "41 - سوق أهراس": {
+        "home": 700,
+        "desk": 400
+      },
+      "42 - تيبازة": {
+        "home": 700,
+        "desk": 400
+      },
+      "43 - ميلة": {
+        "home": 700,
+        "desk": 450
+      },
+      "44 - عين الدفلى": {
+        "home": 700,
+        "desk": 400
+      },
+      "45 - النعامة": {
+        "home": 800,
+        "desk": 500
+      },
+      "46 - عين تموشنت": {
+        "home": 800,
+        "desk": 400
+      },
+      "47 - غرداية": {
+        "home": 900,
+        "desk": 500
+      },
+      "48 - غليزان": {
+        "home": 700,
+        "desk": 400
+      },
+      "49 - تيميمون": {
+        "home": 1100,
+        "desk": 600
+      },
+      "50 - برج باجي مختار": {
+        "home": 1200,
+        "desk": 650
+      },
+      "51 - أولاد جلال": {
+        "home": 900,
+        "desk": 500
+      },
+      "52 - بني عباس": {
+        "home": 1100,
+        "desk": 600
+      },
+      "53 - عين صالح": {
+        "home": 1300,
+        "desk": 700
+      },
+      "54 - عين قزام": {
+        "home": 1300,
+        "desk": 700
+      },
+      "55 - توقرت": {
+        "home": 950,
+        "desk": 550
+      },
+      "56 - جانت": {
+        "home": 1100,
+        "desk": 500
+      },
+      "57 - المغير": {
+        "home": 950,
+        "desk": 550
+      },
+      "58 - المنيعة": {
+        "home": 900,
+        "desk": 400
+      }
+    },
+    "FREE_DELIVERY": {
+      "desk": {
+        "enabled": false,
+        "minQuantity": null,
+        "wilayas": []
+      },
+      "home": {
+        "enabled": false,
+        "minQuantity": null,
+        "wilayas": []
+      },
+      "freeDeliveryProducts": []
+    },
+    "DISCOUNTS": {
+      "enableQuantityDiscount": false,
+      "minQuantityForDiscount": 2,
+      "discountPerItem": 300,
+      "discountScope": "all",
+      "discountProducts": [],
+      "enablePromotionalDiscount": false,
+      "promotionalDiscountPercent": 20,
+      "promotionalDiscountedPrice": 0,
+      "promoDiscountScope": "all",
+      "promoDiscountProducts": []
+    },
+    "STORE_INFO": {
+      "name": "",
+      "storeIcon": "👑",
+      "storeTitle": "👑 أحدث موديلات ",
+      "tagline": "متجر أفخم الملابس",
+      "phoneNumbers": [
+        "0xxxxxxxxx",
+        "0xxxxxxxxx"
+      ],
+      "logo": "",
+      "facebookUrl": "",
+      "instagramUrl": "",
+      "messengerUrl": "",
+      "viberNumber": "",
+      "whatsappNumber": "",
+      "whatsappUrl": ""
+    },
+    "GOOGLE_SHEETS": {
+      "url": "",
+      "description": "",
+      "autoUpdate": false
+    },
+    "AVAILABLE_COLORS": [
+      "أبيض",
+      "أسود",
+      "أحمر",
+      "أزرق",
+      "أخضر",
+      "وردي",
+      "رمادي",
+      "أصفر"
+    ],
+    "AVAILABLE_SIZES": [
+      "S",
+      "S1",
+      "S2",
+      "S3",
+      "M",
+      "M1",
+      "M2",
+      "M3",
+      "L",
+      "XL",
+      "XXL",
+      "XXXL",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50"
+    ],
+    "SIZE_GUIDE": {
+      "38": {
+        "heightFrom": 150,
+        "heightTo": 160,
+        "weightFrom": 50,
+        "weightTo": 70,
+        "enabled": false
+      },
+      "39": {
+        "heightFrom": 152,
+        "heightTo": 162,
+        "weightFrom": 53,
+        "weightTo": 74,
+        "enabled": false
+      },
+      "40": {
+        "heightFrom": 154,
+        "heightTo": 164,
+        "weightFrom": 56,
+        "weightTo": 78,
+        "enabled": false
+      },
+      "41": {
+        "heightFrom": 156,
+        "heightTo": 166,
+        "weightFrom": 59,
+        "weightTo": 82,
+        "enabled": false
+      },
+      "42": {
+        "heightFrom": 158,
+        "heightTo": 168,
+        "weightFrom": 62,
+        "weightTo": 86,
+        "enabled": false
+      },
+      "43": {
+        "heightFrom": 160,
+        "heightTo": 170,
+        "weightFrom": 65,
+        "weightTo": 90,
+        "enabled": false
+      },
+      "44": {
+        "heightFrom": 162,
+        "heightTo": 172,
+        "weightFrom": 68,
+        "weightTo": 94,
+        "enabled": false
+      },
+      "45": {
+        "heightFrom": 164,
+        "heightTo": 174,
+        "weightFrom": 71,
+        "weightTo": 98,
+        "enabled": false
+      },
+      "46": {
+        "heightFrom": 166,
+        "heightTo": 176,
+        "weightFrom": 74,
+        "weightTo": 102,
+        "enabled": false
+      },
+      "47": {
+        "heightFrom": 168,
+        "heightTo": 178,
+        "weightFrom": 77,
+        "weightTo": 106,
+        "enabled": false
+      },
+      "48": {
+        "heightFrom": 170,
+        "heightTo": 180,
+        "weightFrom": 80,
+        "weightTo": 110,
+        "enabled": false
+      },
+      "49": {
+        "heightFrom": 172,
+        "heightTo": 182,
+        "weightFrom": 83,
+        "weightTo": 114,
+        "enabled": false
+      },
+      "S": {
+        "heightFrom": 160,
+        "heightTo": 175,
+        "weightFrom": 50,
+        "weightTo": 65,
+        "enabled": false
+      },
+      "M": {
+        "heightFrom": 170,
+        "heightTo": 180,
+        "weightFrom": 65,
+        "weightTo": 80,
+        "enabled": true
+      },
+      "L": {
+        "heightFrom": 180,
+        "heightTo": 195,
+        "weightFrom": 70,
+        "weightTo": 90,
+        "enabled": true
+      },
+      "XL": {
+        "heightFrom": 185,
+        "heightTo": 200,
+        "weightFrom": 85,
+        "weightTo": 110,
+        "enabled": true
+      },
+      "XXL": {
+        "heightFrom": 190,
+        "heightTo": 205,
+        "weightFrom": 95,
+        "weightTo": 120,
+        "enabled": true
+      },
+      "S1": {
+        "heightFrom": 160,
+        "heightTo": 180,
+        "weightFrom": 50,
+        "weightTo": 80,
+        "enabled": false
+      },
+      "S2": {
+        "heightFrom": 160,
+        "heightTo": 180,
+        "weightFrom": 50,
+        "weightTo": 80,
+        "enabled": false
+      },
+      "S3": {
+        "heightFrom": 160,
+        "heightTo": 180,
+        "weightFrom": 50,
+        "weightTo": 80,
+        "enabled": false
+      },
+      "M1": {
+        "heightFrom": 160,
+        "heightTo": 180,
+        "weightFrom": 50,
+        "weightTo": 80,
+        "enabled": false
+      },
+      "M2": {
+        "heightFrom": 160,
+        "heightTo": 180,
+        "weightFrom": 50,
+        "weightTo": 80,
+        "enabled": false
+      },
+      "M3": {
+        "heightFrom": 160,
+        "heightTo": 180,
+        "weightFrom": 50,
+        "weightTo": 80,
+        "enabled": false
+      },
+      "XXXL": {
+        "heightFrom": 195,
+        "heightTo": 210,
+        "weightFrom": 105,
+        "weightTo": 140,
+        "enabled": false
+      }
+    }
+  },
+  "storageKeys": {},
+  "timestamp": "2025-12-07T10:15:31.349Z",
+  "version": "1.0",
+  "LANDING_PAGES": {
+    "templates": [
+      {
+        "id": "template1",
+        "name": "قالب بسيط",
+        "description": "صفحة هبوط بسيطة وعصرية",
+        "features": [
+          "صورة كبيرة",
+          "وصف مختصر",
+          "زر شراء واضح"
+        ]
+      },
+      {
+        "id": "template2",
+        "name": "قالب متميز",
+        "description": "صفحة هبوط متكاملة مع مميزات",
+        "features": [
+          "معرض صور",
+          "معلومات مفصلة",
+          "أسئلة شائعة",
+          "تعليقات العملاء"
+        ]
+      },
+      {
+        "id": "template3",
+        "name": "قالب ترويجي",
+        "description": "صفحة هبوط مخصصة للعروض",
+        "features": [
+          "عداد تنازلي",
+          "عرض خاص",
+          "شهادة جودة",
+          "ضمان رضا"
+        ]
+      }
+    ],
+    "pages": {
+      "1766870645677": {
+        "productId": 1766870645677,
+        "enabled": true,
+        "title": "بدلة رياضية",
+        "subtitle": "أفضل عرض لهذا المنتج",
+        "description": "",
+        "template": "template1",
+        "features": [
+          "جودة عالية",
+          "توصيل سريع",
+          "ضمان الجودة",
+          "دعم فني"
+        ],
+        "testimonials": [],
+        "faq": [],
+        "createdAt": "2026-01-16T20:12:16.244Z",
+        "updatedAt": "2026-01-16T20:12:16.244Z"
+      }
+    },
+    "analytics": {
+      "1766870645677": {
+        "views": 0,
+        "clicks": 0,
+        "conversions": 0,
+        "averageTime": 0,
+        "lastVisit": null,
+        "dailyStats": {},
+        "sourceStats": {}
+      }
+    },
+    "settings": {
+      "autoGenerate": true,
+      "defaultTemplate": "template1",
+      "trackClicks": true,
+      "trackTime": true,
+      "conversionGoal": "purchase"
+    }
+  },
+  "PRODUCT_CATEGORIES": [
+    "ملابس أطفال",
+    "ملابس رجالية",
+    "ملابس نسائية",
+    "أحذية",
+    "عطور رجالية",
+    "عطور نسائية",
+    "قبعات",
+    "ساعات رجالية",
+    "ساعات نسائية"
+  ],
+  "HAT_TYPES": [
+    "بيسبول",
+    "بريه",
+    "قبعة شمس",
+    "قبعة صوف",
+    "بكيني",
+    "قبعة رياضية",
+    "قبعة كلاسيكية"
+  ],
+  "WATCH_TYPES": [
+    "ساعة يد",
+    "ساعة حائط",
+    "ساعة ذكية",
+    "ساعة كوارتز",
+    "ساعة ميكانيكية",
+    "ساعة فاخرة"
+  ],
+  "PERFUME_TYPES": [
+    "عطر",
+    "ماء تواليت",
+    "ماء عطر",
+    "كريم عطري",
+    "سبراي جسم"
+  ],
+  "PERFUME_NOTES": [
+    "حمضيات",
+    "زهور",
+    "خشب",
+    "أعشاب",
+    "توابل",
+    "فواكه",
+    "مسك",
+    "عنبر"
+  ]
+};
+
+// =============================================================================
+// 🛍️ دالة تحميل المنتجات
+// =============================================================================
+
+function loadProductsConfig() {
+    return STORE_CONFIG.PRODUCTS;
+}
+
+// =============================================================================
+// 🚚 دالة تحميل أسعار التوصيل
+// =============================================================================
+
+function loadDeliveryConfig() {
+    return {
+        deliveryPrices: STORE_CONFIG.DELIVERY_PRICES || {},
+        freeDelivery: STORE_CONFIG.FREE_DELIVERY || {},
+        freeDeliveryProducts: STORE_CONFIG.FREE_DELIVERY.freeDeliveryProducts || []
+    };
+}
+
+// =============================================================================
+// 💰 دالة تحميل إعدادات الخصم
+// =============================================================================
+
+function loadDiscountConfig() {
+    return STORE_CONFIG.DISCOUNTS || {};
+}
+
+// =============================================================================
+// 🏪 دالة تحميل معلومات المتجر
+// =============================================================================
+
+function loadStoreInfo() {
+    return STORE_CONFIG.STORE_INFO || {};
+}
+
+// =============================================================================
+// 🎨 دالة تحميل الألوان والمقاسات
+// =============================================================================
+
+function loadSizesColorsConfig() {
+    return {
+        availableColors: STORE_CONFIG.AVAILABLE_COLORS || [],
+        availableSizes: STORE_CONFIG.AVAILABLE_SIZES || [],
+        sizeGuide: STORE_CONFIG.SIZE_GUIDE || {}
+    };
+}
+
+// =============================================================================
+// 📊 دالة تحميل إعدادات البكسل
+// =============================================================================
+
+function loadPixelConfig() {
+    return STORE_CONFIG.PIXEL_CODES || {};
+}
+
+// =============================================================================
+// 📊 دالة تحميل جميع الإعدادات
+// =============================================================================
+
+function loadAllConfig() {
+    return STORE_CONFIG;
+}
+
+// =============================================================================
+// 🔄 دالة تحديث الإعدادات
+// =============================================================================
+
+function updateConfig(newConfig) {
+    for (const key in newConfig) {
+        if (newConfig.hasOwnProperty(key)) {
+            STORE_CONFIG[key] = newConfig[key];
+        }
+    }
+    return STORE_CONFIG;
+}
