@@ -242,7 +242,7 @@ const STORE_CONFIG = {
   },
   "FREE_DELIVERY": {
     "desk": {
-      "enabled": true,
+      "enabled": false,
       "minQuantity": 1,
       "wilayas": [],
       "minAmount": 0
@@ -273,15 +273,15 @@ const STORE_CONFIG = {
   },
   "STORE_INFO": {
     "name": "",
-    "tagline": " ",
+    "tagline": "",
     "phoneNumbers": [],
     "logo": "",
     "facebookUrl": "",
     "instagramUrl": "",
     "messengerUrl": "",
     "viberNumber": "",
-    "whatsappNumber": "213",
-    "whatsappUrl": "https://wa.me/213",
+    "whatsappNumber": "",
+    "whatsappUrl": "",
     "tiktokUrl": "",
     "storeIcon": "-",
     "storeTitle": "-"
