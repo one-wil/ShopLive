@@ -280,8 +280,8 @@ const STORE_CONFIG = {
     "instagramUrl": "",
     "messengerUrl": "",
     "viberNumber": "",
-    "whatsappNumber": "",
-    "whatsappUrl": "",
+    "whatsappNumber": "213",
+    "whatsappUrl": "https://wa.me/213",
     "tiktokUrl": "",
     "storeIcon": "-",
     "storeTitle": "-"
