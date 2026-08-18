@@ -4130,19 +4130,19 @@
                     <div class="form-group">
                         <label>👉 تخصص المتجر</label>
                         <input type="text" class="form-control" id="storeTagline" 
-                               value="${CONFIG.STORE_INFO?.tagline || 'متجر ملابس فاخرة'}" 
+                               value="${CONFIG.STORE_INFO?.tagline || ''}" 
                                onchange="updateStoreField('tagline', this.value)">
                     </div>
                     
                     <div class="form-group">
                         <label>رقم أو رقمين هاتف (مفصولة بفاصلة)</label>
                         <input type="text" class="form-control" id="storePhones" 
-                               value="${CONFIG.STORE_INFO?.phoneNumbers?.join(', ') || ''}" 
+                               value="${CONFIG.STORE_INFO?.phoneNumbers?.join(' 0666666666,0555555555 ') || ''}" 
                                onchange="updateStoreField('phoneNumbers', this.value)">
                     </div>
                     
                     <div class="form-group">
-                        <label>رقم واتساب</label>
+                        <label> رقم واتساب يبدأ بـ 213</label>
                         <input type="tel" class="form-control" id="whatsappNumber" 
                                value="${CONFIG.STORE_INFO?.whatsappNumber || ''}" 
                                onchange="updateStoreField('whatsappNumber', this.value)">
