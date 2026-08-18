@@ -273,7 +273,7 @@ const STORE_CONFIG = {
   },
   "STORE_INFO": {
     "name": "",
-    "tagline": "",
+    "tagline": " ",
     "phoneNumbers": [],
     "logo": "",
     "facebookUrl": "",
