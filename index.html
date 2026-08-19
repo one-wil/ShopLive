@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
@@ -523,3 +523,49 @@
 
 </body>
 </html>
+
+// ... الكود السابق ...
+
+// عند الضغط على زر الإرسال
+form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    // ... التحقق من صحة البيانات ...
+
+    try {
+        // 1️⃣ إرسال إشعار لك (بصفتك المالك)
+        const templateParamsToAdmin = {
+            to_email: 'benaakrabahcene@gmail.com',
+            from_name: fullName.value.trim(),
+            from_email: email.value.trim(),
+            mobile: mobile.value.trim(),
+            message: message.value.trim() || 'لا يوجد',
+            date: new Date().toLocaleString('fr-FR')
+        };
+
+        await emailjs.send(
+            'YOUR_SERVICE_ID',          // خدمة الإرسال
+            'YOUR_TEMPLATE_ID_ADMIN',   // قالب الإشعار للمالك (الذي أنشأته سابقاً)
+            templateParamsToAdmin
+        );
+
+        // 2️⃣ إرسال الرد التلقائي للعميل
+        const templateParamsToClient = {
+            from_name: fullName.value.trim(),   // اسم العميل
+            to_email: email.value.trim(),       // بريد العميل
+        };
+
+        await emailjs.send(
+            'YOUR_SERVICE_ID',                  // نفس الخدمة
+            'auto-reply-client',                // ⬅️ قالب الرد التلقائي (الذي أنشأناه الآن)
+            templateParamsToClient
+        );
+
+        // عرض رسالة نجاح
+        showMessage('success', '✅ تم إرسال طلبك! تحقق من بريدك الإلكتروني لتأكيد المتجر.');
+        form.reset();
+
+    } catch (error) {
+        console.error(error);
+        showMessage('error', '❌ حدث خطأ، يرجى المحاولة مرة أخرى.');
+    }
+});
