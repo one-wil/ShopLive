@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📍 طلب إنشاء متجر - SANIX-DZ</title>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <style>
+        /* ============================================================
+                   RESET & BASE
+                ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tajawal', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #f0f4f8 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        /* ============================================================
+                   CONTAINER PRINCIPAL
+                ============================================================ */
+        .container {
+            background: #ffffff;
+            max-width: 580px;
+            width: 100%;
+            padding: 40px 35px;
+            border-radius: 28px;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25);
+            animation: fadeInUp 0.6s ease-out;
+            transition: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================================
+                   EN-TÊTE
+                ============================================================ */
+        .header {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .header .logo {
+            font-size: 42px;
+            margin-bottom: 4px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0b1a33;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 span {
+            color: #2563eb;
+        }
+
+        .header p {
+            color: #64748b;
+            font-size: 15px;
+            margin-top: 6px;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 30px;
+            margin-top: 8px;
+        }
+
+        /* ============================================================
+                   ZONE DE MESSAGE
+                ============================================================ */
+        #messageArea {
+            display: none;
+            padding: 16px 20px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            font-weight: 500;
+            animation: slideDown 0.35s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #messageArea.success {
+            display: block;
+            background: #ecfdf5;
+            border: 1px solid #6ee7b7;
+            color: #065f46;
+        }
+
+        #messageArea.error {
+            display: block;
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+        }
+
+        /* ============================================================
+                   FORMULAIRE
+                ============================================================ */
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .required {
+            color: #ef4444;
+            margin-right: 2px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 15px;
+            transition: 0.25s;
+            background: #fafbfc;
+            color: #0f172a;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+            background: #ffffff;
+        }
+
+        input.error,
+        textarea.error {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        input.success-input,
+        textarea.success-input {
+            border-color: #22c55e;
+            background: #f0fdf4;
+        }
+
+        .error-msg {
+            display: none;
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .error-msg.visible {
+            display: block;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* ============================================================
+                   BOUTON D'ENVOI
+                ============================================================ */
+        #submitBtn {
+            width: 100%;
+            padding: 17px;
+            background: #0b1a33;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 6px;
+            box-shadow: 0 6px 18px rgba(11, 26, 51, 0.20);
+        }
+
+        #submitBtn:hover:not(:disabled) {
+            background: #1a2c4e;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -5px rgba(11, 26, 51, 0.30);
+        }
+
+        #submitBtn:active:not(:disabled) {
+            transform: translateY(0px);
+        }
+
+        #submitBtn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .spinner {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 0.7s linear infinite;
+        }
+
+        .spinner.active {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ============================================================
+                   MENTIONS LÉGALES
+                ============================================================ */
+        .legal {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #94a3b8;
+            text-align: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 18px;
+        }
+
+        .legal i {
+            font-style: normal;
+            background: #f1f5f9;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        /* ============================================================
+                   RESPONSIVE
+                ============================================================ */
+        @media (max-width: 500px) {
+            .container {
+                padding: 28px 18px;
+                border-radius: 20px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            #submitBtn {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ===== EN-TÊTE ===== -->
+        <div class="header">
+            <div class="logo">🚀</div>
+            <h1>أنشئ <span>متجرك</span> الآن</h1>
+            <p>املأ النموذج وسنرسل لك رابط المتجر ولوحة التحكم</p>
+            <span class="badge">⚡ إعداد فوري</span>
+        </div>
+
+        <!-- ===== ZONE DE MESSAGE ===== -->
+        <div id="messageArea"></div>
+
+        <!-- ===== FORMULAIRE ===== -->
+        <form id="rentalForm" novalidate>
+
+            <!-- Honeypot anti-spam (caché) -->
+            <div style="display:none;">
+                <label for="website">Site web</label>
+                <input type="text" id="website" name="website" value="" />
+            </div>
+
+            <!-- الاسم الكامل -->
+            <div class="form-group">
+                <label for="fullName">الاسم الكامل <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="مثال: أحمد بن علي" required />
+                <span class="error-msg" id="fullNameError">الرجاء إدخال الاسم الكامل (حرفان على الأقل)</span>
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required />
+                <span class="error-msg" id="emailError">الرجاء إدخال بريد إلكتروني صحيح</span>
+            </div>
+
+            <!-- رقم الهاتف -->
+            <div class="form-group">
+                <label for="mobile">رقم الهاتف <span class="required">*</span></label>
+                <input type="tel" id="mobile" name="mobile" placeholder="+213 5XX XX XX XX" required />
+                <span class="error-msg" id="mobileError">الرجاء إدخال رقم هاتف صحيح (8 أرقام على الأقل)</span>
+            </div>
+
+            <!-- رسالة إضافية -->
+            <div class="form-group">
+                <label for="message">رسالة إضافية</label>
+                <textarea id="message" name="message" rows="3" placeholder="أي معلومات إضافية تود إخبارنا بها..."></textarea>
+            </div>
+
+            <!-- زر الإرسال -->
+            <button type="submit" id="submitBtn">
+                <span id="btnText">🚀 إنشاء متجري الآن</span>
+                <span class="spinner" id="btnSpinner"></span>
+            </button>
+
+            <p class="legal">
+                <i>🔒</i> بياناتك آمنة ولن يتم مشاركتها مع أي طرف ثالث
+            </p>
+        </form>
+    </div>
+
+    <script>
+        // ============================================================
+        //  1. التهيئة - EmailJS
+        // ============================================================
+        (function() {
+            // 🔑 قيمك الحقيقية من EmailJS
+            const PUBLIC_KEY = 'IoRq37-HOpJHYLC4m';
+            const SERVICE_ID = 'service_sf526sp';
+            
+            // ⚠️ قالب الرد التلقائي للعميل فقط (تم حذف قالب الإشعار)
+            const TEMPLATE_ID_CLIENT = 'template_v9l26zu'; // استبدل بمعرف قالب الرد التلقائي
+
+            // تهيئة EmailJS
+            emailjs.init(PUBLIC_KEY);
+
+            // ============================================================
+            //  2. المراجع (DOM)
+            // ============================================================
+            const form = document.getElementById('rentalForm');
+            const messageArea = document.getElementById('messageArea');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+
+            const fullName = document.getElementById('fullName');
+            const email = document.getElementById('email');
+            const mobile = document.getElementById('mobile');
+            const message = document.getElementById('message');
+
+            // ============================================================
+            //  3. وظائف مساعدة
+            // ============================================================
+            function showMessage(type, text) {
+                messageArea.className = type;
+                messageArea.textContent = text;
+                messageArea.style.display = 'block';
+            }
+
+            function hideMessage() {
+                messageArea.style.display = 'none';
+                messageArea.className = '';
+            }
+
+            function setLoading(loading) {
+                submitBtn.disabled = loading;
+                btnText.textContent = loading ? 'جاري الإرسال...' : '🚀 إنشاء متجري الآن';
+                btnSpinner.classList.toggle('active', loading);
+            }
+
+            // ============================================================
+            //  4. التحقق من صحة الحقول (Validation)
+            // ============================================================
+            function validateField(field) {
+                const errorEl = document.getElementById(field.id + 'Error');
+                let isValid = true;
+
+                // إزالة الفئات القديمة
+                field.classList.remove('error', 'success-input');
+
+                if (field.id === 'fullName') {
+                    if (field.value.trim().length < 2) {
+                        errorEl.classList.add('visible');
+                        field.classList.add('error');
+                        isValid = false;
+                    } else {
+                        errorEl.classList.remove('visible');
+                        field.classList.add('success-input');
+                    }
+                }
+
+                if (field.id === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+                    if (!emailRegex.test(field.value.trim())) {
+                        errorEl.classList.add('visible');
+                        field.classList.add('error');
+                        isValid = false;
+                    } else {
+                        errorEl.classList.remove('visible');
+                        field.classList.add('success-input');
+                    }
+                }
+
+                if (field.id === 'mobile') {
+                    const clean = field.value.trim().replace(/[\s\-+()]/g, '');
+                    if (clean.length < 8 || !/^\d+$/.test(clean)) {
+                        errorEl.classList.add('visible');
+                        field.classList.add('error');
+                        isValid = false;
+                    } else {
+                        errorEl.classList.remove('visible');
+                        field.classList.add('success-input');
+                    }
+                }
+
+                return isValid;
+            }
+
+            // التحقق الفوري عند مغادرة الحقل أو الكتابة
+            [fullName, email, mobile].forEach(field => {
+                field.addEventListener('blur', function() {
+                    validateField(this);
+                    hideMessage();
+                });
+
+                field.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        validateField(this);
+                    }
+                    hideMessage();
+                });
+            });
+
+            // ============================================================
+            //  5. إرسال النموذج (الرد التلقائي فقط)
+            // ============================================================
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                hideMessage();
+
+                // التحقق من جميع الحقول
+                const isNameValid = validateField(fullName);
+                const isEmailValid = validateField(email);
+                const isMobileValid = validateField(mobile);
+
+                if (!isNameValid || !isEmailValid || !isMobileValid) {
+                    showMessage('error', '⚠️ الرجاء تصحيح الأخطاء قبل المتابعة.');
+                    return;
+                }
+
+                // فحص honeypot (مكافحة البريد المزعج)
+                const honeypot = document.getElementById('website');
+                if (honeypot.value.trim() !== '') {
+                    showMessage('error', '❌ تم اكتشاف محاولة بريد مزعج. الرجاء المحاولة مرة أخرى.');
+                    return;
+                }
+
+                // تعطيل الزر أثناء الإرسال
+                setLoading(true);
+
+                try {
+                    // ============================================================
+                    //  ✅ إرسال الرد التلقائي للعميل فقط (تم حذف إشعار المالك)
+                    // ============================================================
+                    const clientParams = {
+                        from_name: fullName.value.trim(),
+                        to_email: email.value.trim(),
+                    };
+
+                    await emailjs.send(
+                        SERVICE_ID,
+                        TEMPLATE_ID_CLIENT,
+                        clientParams
+                    );
+
+                    // ============================================================
+                    //  ✅ نجاح الإرسال
+                    // ============================================================
+                    showMessage('success', '✅ تم إرسال طلبك بنجاح! تحقق من بريدك الإلكتروني (بما في ذلك مجلد البريد المزعج) لتأكيد متجرك.');
+                    form.reset();
+
+                    // إعادة تعيين الأنماط
+                    [fullName, email, mobile].forEach(f => {
+                        f.classList.remove('success-input', 'error');
+                    });
+
+                } catch (error) {
+                    console.error('❌ خطأ في الإرسال:', error);
+                    showMessage('error', '❌ حدث خطأ أثناء الإرسال. الرجاء المحاولة مرة أخرى أو الاتصال بنا مباشرة.');
+                } finally {
+                    setLoading(false);
+                }
+            });
+
+            // ============================================================
+            //  6. إرشادات الإعداد (تظهر في Console)
+            // ============================================================
+            console.log('%c📧 إعداد EmailJS - تم التهيئة بنجاح', 'font-size:18px;font-weight:bold;color:#0b1a33;');
+            console.log('🔑 Public Key:', PUBLIC_KEY);
+            console.log('🆔 Service ID:', SERVICE_ID);
+            console.log('📋 Template Client (الرد التلقائي):', TEMPLATE_ID_CLIENT);
+            console.log('✅ تم حذف بريد الإشعار نهائياً');
+            console.log('📧 سيصل الرد التلقائي فقط إلى بريد العميل');
+            console.log('🌐 رابط المتجر: https://one-wil.github.io/sanix-dz/');
+            console.log('🌐 رابط لوحة التحكم: https://one-wil.github.io/sanix-dz/admin');
+
+        })();
+    </script>
+
+</body>
+</html>
