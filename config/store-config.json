@@ -282,9 +282,9 @@
     "storeTitle": "-"
   },
   "GOOGLE_SHEETS": {
-    "url": "",
+    "url": "https://docs.google.com/spreadsheets/d/1ie0uIyKxLagFof1fhBinOIiCQ9Sy5lRcSYWQfD-GPy0/edit?gid=0#gid=0",
     "description": "  جدول الطلبات",
-    "autoUpdate": false
+    "autoUpdate": true
   },
   "AVAILABLE_COLORS": [
     "أبيض",
@@ -1231,5 +1231,6 @@
     "فواكه",
     "مسك",
     "عنبر"
-  ]
+  ],
+  "ORDERS": []
 }
