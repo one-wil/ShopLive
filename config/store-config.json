@@ -72,10 +72,61 @@
       "createdAt": "2026-08-22T09:56:13.318Z",
       "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-1787392905323-modal4.jpg",
       "updatedAt": "2026-08-22T10:12:05.466Z"
+    },
+    "1787394416989": {
+      "name": "لباس افراح للأطفال",
+      "price": 5000,
+      "description": "لباس جميل ومتميز  للأفراح ولمناسب",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "أحمر"
+      ],
+      "availableSizes": [
+        "M",
+        "L"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "أحمر": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787394416989-أحمر-1787394998397-modle6.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "12",
+              "ageTo": "8",
+              "size": "M"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": true,
+        "guide": {
+          "M": {
+            "heightFrom": 80,
+            "heightTo": 100,
+            "weightFrom": 10,
+            "weightTo": 13
+          },
+          "L": {
+            "heightFrom": 100,
+            "heightTo": 130,
+            "weightFrom": 13,
+            "weightTo": 16
+          }
+        }
+      },
+      "createdAt": "2026-08-22T10:26:56.989Z",
+      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787394416989-1787394776340-modle6.jpg",
+      "updatedAt": "2026-08-22T10:36:12.932Z"
     }
   },
   "PRODUCT_ORDER": {
-    "1787392573318": 1
+    "1787392573318": 1,
+    "1787394416989": 2
   },
   "DELIVERY_PRICES": {
     "01 - أدرار": {
