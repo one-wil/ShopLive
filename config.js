@@ -407,7 +407,8 @@ const STORE_CONFIG = {
     "name": " BBENAKRAB-DZ",
     "tagline": "متجر ملابس الاطفال",
     "phoneNumbers": [
-      "0551102155، 0671466488"
+      "0551102155",
+      "0671466488"
     ],
     "logo": "https://raw.githubusercontent.com/one-wil/stars/main/images/store-logo-1787393026126-logo11-24-20412.png",
     "facebookUrl": "",
