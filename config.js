@@ -4,8 +4,84 @@
 // =============================================================================
 
 const STORE_CONFIG = {
-  "PRODUCTS": {},
-  "PRODUCT_ORDER": {},
+  "PRODUCTS": {
+    "1787392573318": {
+      "name": "لباس أطفال",
+      "price": 4200,
+      "description": "لباس عصري متقون بألوان زاهية",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "أحمر",
+        "أزرق"
+      ],
+      "availableSizes": [
+        "S",
+        "M"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "أحمر": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-أحمر-1787393557987-modal3.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "10",
+              "ageTo": "6",
+              "size": "S"
+            },
+            {
+              "ageFrom": "13",
+              "ageTo": "10",
+              "size": "M"
+            }
+          ]
+        },
+        "أزرق": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-أزرق-1787393616543-modal4.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "10",
+              "ageTo": "6",
+              "size": "S"
+            },
+            {
+              "ageFrom": "13",
+              "ageTo": "11",
+              "size": "M"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": true,
+        "guide": {
+          "S": {
+            "heightFrom": 70,
+            "heightTo": 90,
+            "weightFrom": 9,
+            "weightTo": 12
+          },
+          "M": {
+            "heightFrom": 90,
+            "heightTo": 120,
+            "weightFrom": 12,
+            "weightTo": 16
+          }
+        }
+      },
+      "createdAt": "2026-08-22T09:56:13.318Z",
+      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-1787392905323-modal4.jpg",
+      "updatedAt": "2026-08-22T10:12:05.466Z"
+    }
+  },
+  "PRODUCT_ORDER": {
+    "1787392573318": 1
+  },
   "DELIVERY_PRICES": {
     "01 - أدرار": {
       "home": 1100,
@@ -242,13 +318,13 @@ const STORE_CONFIG = {
   },
   "FREE_DELIVERY": {
     "desk": {
-      "enabled": false,
+      "enabled": true,
       "minQuantity": 1,
       "wilayas": [],
       "minAmount": 0
     },
     "home": {
-      "enabled": false,
+      "enabled": true,
       "minQuantity": 1,
       "wilayas": [],
       "minAmount": 0
@@ -256,15 +332,18 @@ const STORE_CONFIG = {
     "freeDeliveryProducts": [
       1765137505304,
       1765145035052,
-      1765145814607
+      1765145814607,
+      1787392573318
     ]
   },
   "DISCOUNTS": {
-    "enableQuantityDiscount": false,
+    "enableQuantityDiscount": true,
     "minQuantityForDiscount": 1,
-    "discountPerItem": 500,
+    "discountPerItem": 250,
     "discountScope": "selected",
-    "discountProducts": [],
+    "discountProducts": [
+      1787392573318
+    ],
     "enablePromotionalDiscount": false,
     "promotionalDiscountPercent": 20,
     "promotionalDiscountedPrice": null,
@@ -272,16 +351,18 @@ const STORE_CONFIG = {
     "promoDiscountProducts": []
   },
   "STORE_INFO": {
-    "name": "",
-    "tagline": "",
-    "phoneNumbers": [],
-    "logo": "",
+    "name": " BBENAKRAB-DZ",
+    "tagline": "متجر ملابس الاطفال",
+    "phoneNumbers": [
+      "0551102155، 0671466488"
+    ],
+    "logo": "https://raw.githubusercontent.com/one-wil/stars/main/images/store-logo-1787393026126-logo11-24-20412.png",
     "facebookUrl": "",
     "instagramUrl": "",
     "messengerUrl": "",
     "viberNumber": "",
-    "whatsappNumber": "",
-    "whatsappUrl": "",
+    "whatsappNumber": "213551102155",
+    "whatsappUrl": "https://wa.me/213551102155",
     "tiktokUrl": "",
     "storeIcon": "-",
     "storeTitle": "-"
