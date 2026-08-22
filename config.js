@@ -24,7 +24,7 @@ const STORE_CONFIG = {
       "colorImages": {
         "أحمر": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-أحمر-1787393557987-modal3.jpg"
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787392573318-أحمر-1787393557987-modal3.jpg"
           ],
           "ageRanges": [
             {
@@ -41,7 +41,7 @@ const STORE_CONFIG = {
         },
         "أزرق": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-أزرق-1787393616543-modal4.jpg"
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787392573318-أزرق-1787393616543-modal4.jpg"
           ],
           "ageRanges": [
             {
@@ -75,7 +75,7 @@ const STORE_CONFIG = {
         }
       },
       "createdAt": "2026-08-22T09:56:13.318Z",
-      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787392573318-1787392905323-modal4.jpg",
+      "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787392573318-1787392905323-modal4.jpg",
       "updatedAt": "2026-08-22T10:12:05.466Z"
     },
     "1787394416989": {
@@ -96,7 +96,7 @@ const STORE_CONFIG = {
       "colorImages": {
         "أحمر": {
           "images": [
-            "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787394416989-أحمر-1787394998397-modle6.jpg"
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787394416989-أحمر-1787394998397-modle6.jpg"
           ],
           "ageRanges": [
             {
@@ -125,7 +125,7 @@ const STORE_CONFIG = {
         }
       },
       "createdAt": "2026-08-22T10:26:56.989Z",
-      "image": "https://raw.githubusercontent.com/one-wil/stars/main/images/product-1787394416989-1787394776340-modle6.jpg",
+      "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787394416989-1787394776340-modle6.jpg",
       "updatedAt": "2026-08-22T10:36:12.932Z"
     }
   },
@@ -410,7 +410,7 @@ const STORE_CONFIG = {
       "0551102155",
       "0671466488"
     ],
-    "logo": "https://raw.githubusercontent.com/one-wil/stars/main/images/store-logo-1787398149724-Screenshot-20260822-122550-Gallery.jpg",
+    "logo": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/store-logo-1787398149724-Screenshot-20260822-122550-Gallery.jpg",
     "facebookUrl": "",
     "instagramUrl": "",
     "messengerUrl": "",
