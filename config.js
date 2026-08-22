@@ -370,7 +370,7 @@ const STORE_CONFIG = {
   "FREE_DELIVERY": {
     "desk": {
       "enabled": true,
-      "minQuantity": 2,
+      "minQuantity": 1,
       "wilayas": [],
       "minAmount": 0
     },
