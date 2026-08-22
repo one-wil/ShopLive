@@ -375,7 +375,7 @@ const STORE_CONFIG = {
       "minAmount": 0
     },
     "home": {
-      "enabled": true,
+      "enabled": false,
       "minQuantity": 2,
       "wilayas": [],
       "minAmount": 0
@@ -410,7 +410,7 @@ const STORE_CONFIG = {
       "0551102155",
       "0671466488"
     ],
-    "logo": "https://raw.githubusercontent.com/one-wil/stars/main/images/store-logo-1787398002038-Screenshot-20260822-122550-Gallery.jpg",
+    "logo": "https://raw.githubusercontent.com/one-wil/stars/main/images/store-logo-1787398149724-Screenshot-20260822-122550-Gallery.jpg",
     "facebookUrl": "",
     "instagramUrl": "",
     "messengerUrl": "",
