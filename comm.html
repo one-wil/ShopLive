@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commande reçue par E-mail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem 2rem 2.5rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0, 20, 40, 0.15);
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 50px rgba(0, 40, 80, 0.2);
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #0b2b3d;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #2c5f7a;
+            font-weight: 500;
+            font-size: 1rem;
+            background: #e3f0f7;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Zone d'affichage de l'image */
+        .image-preview {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-height: 280px;
+            background: #f0f6fb;
+            border-radius: 28px;
+            border: 2px dashed #b6d2e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0 auto 1.8rem;
+            transition: 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .image-preview:hover {
+            border-color: #2e7d9e;
+            background: #e9f2f9;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-preview .placeholder {
+            color: #5f8ba3;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px;
+        }
+
+        .image-preview .placeholder span {
+            font-size: 2.8rem;
+            opacity: 0.6;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .upload-btn-wrapper input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .btn-upload {
+            background: #1f5a77;
+            color: white;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(26, 90, 125, 0.3);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-upload:hover {
+            background: #134a63;
+            transform: scale(1.01);
+            box-shadow: 0 10px 20px rgba(18, 70, 100, 0.35);
+        }
+
+        .btn-upload:active {
+            transform: scale(0.97);
+        }
+
+        /* Bouton de sauvegarde */
+        .btn-save {
+            background: #0f3b4e;
+            color: white;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(10, 50, 70, 0.25);
+            margin-top: 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-save:hover {
+            background: #082b3a;
+            transform: scale(1.01);
+        }
+
+        .btn-save:active {
+            transform: scale(0.97);
+        }
+
+        .status-msg {
+            margin-top: 1.4rem;
+            font-size: 0.95rem;
+            color: #1b4b62;
+            background: #dcecf6;
+            padding: 0.6rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .status-msg.show {
+            display: block;
+        }
+
+        .badge-email {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #2f657f;
+            background: #dcecf6;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .footer-icon {
+            margin-top: 1.2rem;
+            font-size: 1rem;
+            color: #587f94;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <!-- Titre principal -->
+    <h1>📬 Commande reçue</h1>
+    <div class="subtitle">par E-mail</div>
+
+    <!-- Zone d'affichage de l'image (cliquez pour charger) -->
+    <div id="imagePreview" class="image-preview" onclick="document.getElementById('fileInput').click();">
+        <div class="placeholder" id="placeholderText">
+            <span>🖼️</span>
+            Cliquez pour charger une image
+        </div>
+        <img id="uploadedImage" src="" alt="Image de la commande" style="display: none;" />
+    </div>
+
+    <!-- Champ file caché + bouton -->
+    <div class="upload-btn-wrapper">
+        <input type="file" id="fileInput" accept="image/*" />
+        <button class="btn-upload" onclick="document.getElementById('fileInput').click();">
+            ⬆ Choisir une image
+        </button>
+    </div>
+
+    <!-- Bouton Sauvegarder (conserve l'image dans le localStorage) -->
+    <button class="btn-save" id="saveBtn">
+        💾 Sauvegarder l'image
+    </button>
+
+    <!-- Message de statut -->
+    <div id="statusMsg" class="status-msg">✅ Image sauvegardée avec succès</div>
+
+    <!-- Petit indicateur -->
+    <div class="badge-email">✉️ commande@exemple.com</div>
+    <div class="footer-icon">🔒 Conservation locale</div>
+</div>
+
+<script>
+    (function() {
+        // Éléments DOM
+        const fileInput = document.getElementById('fileInput');
+        const previewDiv = document.getElementById('imagePreview');
+        const uploadedImg = document.getElementById('uploadedImage');
+        const placeholderText = document.getElementById('placeholderText');
+        const statusMsg = document.getElementById('statusMsg');
+        const saveBtn = document.getElementById('saveBtn');
+
+        // Variable pour stocker l'image en base64 (pour sauvegarde)
+        let currentImageData = null;
+
+        // --- 1. Charger une image depuis le stockage local au démarrage ---
+        function loadStoredImage() {
+            const stored = localStorage.getItem('savedCommandImage');
+            if (stored) {
+                try {
+                    // Vérifier que c'est bien une image valide
+                    const testImg = new Image();
+                    testImg.onload = function() {
+                        // L'image est valide, on l'affiche
+                        currentImageData = stored;
+                        uploadedImg.src = stored;
+                        uploadedImg.style.display = 'block';
+                        placeholderText.style.display = 'none';
+                    };
+                    testImg.onerror = function() {
+                        // Si l'image est corrompue, on efface
+                        localStorage.removeItem('savedCommandImage');
+                        resetPreview();
+                    };
+                    testImg.src = stored;
+                } catch (e) {
+                    localStorage.removeItem('savedCommandImage');
+                    resetPreview();
+                }
+            } else {
+                resetPreview();
+            }
+        }
+
+        // --- 2. Réinitialiser l'affichage (pas d'image) ---
+        function resetPreview() {
+            currentImageData = null;
+            uploadedImg.src = '';
+            uploadedImg.style.display = 'none';
+            placeholderText.style.display = 'flex';
+            statusMsg.classList.remove('show');
+        }
+
+        // --- 3. Afficher une image chargée (FileReader) ---
+        function displayImage(file) {
+            if (!file || !file.type.startsWith('image/')) {
+                alert('Veuillez sélectionner une image valide.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageData = e.target.result;
+                currentImageData = imageData;
+                uploadedImg.src = imageData;
+                uploadedImg.style.display = 'block';
+                placeholderText.style.display = 'none';
+                statusMsg.classList.remove('show');
+            };
+            reader.onerror = function() {
+                alert('Erreur lors de la lecture de l\'image.');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // --- 4. Sauvegarder l'image dans localStorage ---
+        function saveImage() {
+            if (!currentImageData) {
+                // Si aucune image n'est chargée, on peut afficher un message ou ignorer
+                statusMsg.textContent = '⚠️ Aucune image à sauvegarder.';
+                statusMsg.style.background = '#fce9d6';
+                statusMsg.style.color = '#8a5a2e';
+                statusMsg.classList.add('show');
+                setTimeout(() => {
+                    statusMsg.classList.remove('show');
+                    statusMsg.style.background = '#dcecf6';
+                    statusMsg.style.color = '#1b4b62';
+                }, 2500);
+                return;
+            }
+
+            try {
+                localStorage.setItem('savedCommandImage', currentImageData);
+                statusMsg.textContent = '✅ Image sauvegardée avec succès !';
+                statusMsg.style.background = '#d4edda';
+                statusMsg.style.color = '#155724';
+                statusMsg.classList.add('show');
+                setTimeout(() => {
+                    statusMsg.classList.remove('show');
+                    statusMsg.style.background = '#dcecf6';
+                    statusMsg.style.color = '#1b4b62';
+                }, 3000);
+            } catch (e) {
+                alert('Erreur lors de la sauvegarde : ' + e.message);
+            }
+        }
+
+        // --- 5. Événements ---
+
+        // Quand l'utilisateur choisit un fichier
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                displayImage(this.files[0]);
+            }
+            // Réinitialiser l'input pour permettre de re-sélectionner le même fichier
+            this.value = '';
+        });
+
+        // Clic sur le bouton "Sauvegarder"
+        saveBtn.addEventListener('click', saveImage);
+
+        // (Optionnel) glisser-déposer simple sur la zone preview
+        previewDiv.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.borderColor = '#1f5a77';
+            this.style.background = '#dcecf6';
+        });
+
+        previewDiv.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.borderColor = '#b6d2e3';
+            this.style.background = '#f0f6fb';
+        });
+
+        previewDiv.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.borderColor = '#b6d2e3';
+            this.style.background = '#f0f6fb';
+            const files = e.dataTransfer.files;
+            if (files && files[0]) {
+                displayImage(files[0]);
+            }
+        });
+
+        // --- 6. Initialisation : charger l'image sauvegardée ---
+        loadStoredImage();
+
+    })();
+</script>
+
+</body>
+</html>
