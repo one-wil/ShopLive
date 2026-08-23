@@ -124,7 +124,7 @@
       "updatedAt": "2026-08-22T10:36:12.932Z"
     },
     "1787472725940": {
-      "name": "  حداء رياضي ",
+      "name": "Basket Nike ",
       "price": 4990,
       "description": "حداء ياضي بمواصفات جد فاخرة ، مريح للقدمين ",
       "category": "",
@@ -194,7 +194,110 @@
       },
       "createdAt": "2026-08-23T08:12:05.940Z",
       "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787472725940-1787472915472-Screenshot-20260105-224958-Chrome.jpg",
-      "updatedAt": "2026-08-23T08:23:38.901Z"
+      "updatedAt": "2026-08-23T08:27:29.867Z"
+    },
+    "1787473487108": {
+      "name": "بدلة رياضية",
+      "price": 0,
+      "description": "بدلة رياضية بجميع مواصفات الراحة و الجودة",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "Noir-Bleu",
+        "Noir-Vert",
+        "Noir-Rouge"
+      ],
+      "availableSizes": [
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "Noir-Bleu": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787473487108-Noir-Bleu-1787474322291-IMG-20251223-WA0007.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XL"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        },
+        "Noir-Vert": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787473487108-Noir-Vert-1787474384509-IMG-20251223-WA0006.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XL"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        },
+        "Noir-Rouge": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787473487108-Noir-Rouge-1787474451041-IMG-20251223-WA0005.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "L"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "XXL"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": true,
+        "guide": {
+          "L": {
+            "heightFrom": 150,
+            "heightTo": 165,
+            "weightFrom": 55,
+            "weightTo": 65
+          },
+          "XL": {
+            "heightFrom": 165,
+            "heightTo": 175,
+            "weightFrom": 65,
+            "weightTo": 75
+          },
+          "XXL": {
+            "heightFrom": 175,
+            "heightTo": 190,
+            "weightFrom": 75,
+            "weightTo": 95
+          }
+        }
+      },
+      "createdAt": "2026-08-23T08:24:47.108Z",
+      "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787473487108-1787473878404-IMG-20251223-WA0007.jpg",
+      "updatedAt": "2026-08-23T08:37:28.545Z"
     }
   },
   "PRODUCT_ORDER": {
@@ -513,7 +616,10 @@
     "Olive Green-black",
     "Black-olive Geen",
     "Beige - Black",
-    "Gray-black"
+    "Gray-black",
+    "Noir-Bleu",
+    "Noir-Vert",
+    "Noir-Rouge"
   ],
   "AVAILABLE_SIZES": [
     "S",
