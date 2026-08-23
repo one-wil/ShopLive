@@ -198,7 +198,7 @@
     },
     "1787473487108": {
       "name": "بدلة رياضية",
-      "price": 0,
+      "price": 5000,
       "description": "بدلة رياضية بجميع مواصفات الراحة و الجودة",
       "category": "",
       "stock": 0,
@@ -297,7 +297,7 @@
       },
       "createdAt": "2026-08-23T08:24:47.108Z",
       "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787473487108-1787473878404-IMG-20251223-WA0007.jpg",
-      "updatedAt": "2026-08-23T08:37:28.545Z"
+      "updatedAt": "2026-08-23T08:49:05.649Z"
     }
   },
   "PRODUCT_ORDER": {
