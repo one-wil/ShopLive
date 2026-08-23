@@ -742,7 +742,7 @@ const STORE_CONFIG = {
       "heightTo": 160,
       "weightFrom": 40,
       "weightTo": 55,
-      "enabled": true
+      "enabled": false
     },
     "S": {
       "heightFrom": 120,
