@@ -13,35 +13,52 @@
         }
 
         body {
-            background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
+            background: #0a1a2b;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            overflow: hidden;
         }
 
-        .card {
-            background: white;
-            max-width: 500px;
-            width: 100%;
-            padding: 2rem 2rem 2.5rem;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0, 20, 40, 0.15);
+        /* Conteneur principal - occupe tout l'écran */
+        .fullscreen-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: #0a1a2b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Interface initiale (visible quand pas d'image) */
+        .interface {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            max-width: 520px;
+            width: 90%;
+            padding: 2.5rem 2rem 2.5rem;
+            border-radius: 50px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
             text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(2px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 30px 50px rgba(0, 40, 80, 0.2);
+        /* Quand l'image est chargée, on cache l'interface */
+        .interface.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+            visibility: hidden;
         }
 
         h1 {
-            font-size: 1.9rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 800;
             color: #0b2b3d;
             letter-spacing: -0.5px;
             margin-bottom: 0.25rem;
@@ -49,20 +66,20 @@
 
         .subtitle {
             color: #2c5f7a;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
             background: #e3f0f7;
             display: inline-block;
-            padding: 0.3rem 1.2rem;
+            padding: 0.3rem 1.5rem;
             border-radius: 40px;
             margin-bottom: 1.8rem;
         }
 
-        /* Zone d'affichage de l'image */
+        /* Zone d'aperçu */
         .image-preview {
             width: 100%;
             aspect-ratio: 1 / 1;
-            max-height: 280px;
+            max-height: 260px;
             background: #f0f6fb;
             border-radius: 28px;
             border: 2px dashed #b6d2e3;
@@ -71,7 +88,7 @@
             justify-content: center;
             overflow: hidden;
             margin: 0 auto 1.8rem;
-            transition: 0.2s;
+            transition: 0.3s;
             cursor: pointer;
             position: relative;
         }
@@ -85,7 +102,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            display: none;
         }
 
         .image-preview .placeholder {
@@ -100,14 +117,14 @@
         }
 
         .image-preview .placeholder span {
-            font-size: 2.8rem;
+            font-size: 3rem;
             opacity: 0.6;
         }
 
         .upload-btn-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             width: 100%;
         }
 
@@ -127,7 +144,7 @@
             border: none;
             padding: 0.9rem 1.8rem;
             border-radius: 60px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
             width: 100%;
             transition: 0.2s;
@@ -141,18 +158,13 @@
             box-shadow: 0 10px 20px rgba(18, 70, 100, 0.35);
         }
 
-        .btn-upload:active {
-            transform: scale(0.97);
-        }
-
-        /* Bouton de sauvegarde */
         .btn-save {
             background: #0f3b4e;
             color: white;
             border: none;
             padding: 0.9rem 1.8rem;
             border-radius: 60px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
             width: 100%;
             transition: 0.2s;
@@ -169,12 +181,8 @@
             transform: scale(1.01);
         }
 
-        .btn-save:active {
-            transform: scale(0.97);
-        }
-
         .status-msg {
-            margin-top: 1.4rem;
+            margin-top: 1.2rem;
             font-size: 0.95rem;
             color: #1b4b62;
             background: #dcecf6;
@@ -193,54 +201,120 @@
             font-size: 0.9rem;
             color: #2f657f;
             background: #dcecf6;
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 30px;
             display: inline-block;
         }
 
-        .footer-icon {
-            margin-top: 1.2rem;
-            font-size: 1rem;
-            color: #587f94;
+        /* ===== IMAGE PLEIN ÉCRAN ===== */
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: pointer;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .fullscreen-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+
+        .fullscreen-image.show {
+            display: flex;
+        }
+
+        /* Indicateur "Cliquez pour quitter" */
+        .fullscreen-image .hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .interface {
+                padding: 1.8rem 1.2rem;
+                border-radius: 30px;
+                width: 95%;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .image-preview {
+                max-height: 200px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="card">
+<div class="fullscreen-container">
 
-    <!-- Titre principal -->
-    <h1>📬 Commande reçue</h1>
-    <div class="subtitle">par E-mail</div>
+    <!-- ===== INTERFACE INITIALE ===== -->
+    <div class="interface" id="mainInterface">
+        <h1>📬 Commande reçue</h1>
+        <div class="subtitle">par E-mail</div>
 
-    <!-- Zone d'affichage de l'image (cliquez pour charger) -->
-    <div id="imagePreview" class="image-preview" onclick="document.getElementById('fileInput').click();">
-        <div class="placeholder" id="placeholderText">
-            <span>🖼️</span>
-            Cliquez pour charger une image
+        <div class="image-preview" id="imagePreview" onclick="document.getElementById('fileInput').click();">
+            <div class="placeholder" id="placeholderText">
+                <span>🖼️</span>
+                Cliquez pour charger une image
+            </div>
+            <img id="uploadedImage" src="" alt="Image de la commande" />
         </div>
-        <img id="uploadedImage" src="" alt="Image de la commande" style="display: none;" />
-    </div>
 
-    <!-- Champ file caché + bouton -->
-    <div class="upload-btn-wrapper">
-        <input type="file" id="fileInput" accept="image/*" />
-        <button class="btn-upload" onclick="document.getElementById('fileInput').click();">
-            ⬆ Choisir une image
+        <div class="upload-btn-wrapper">
+            <input type="file" id="fileInput" accept="image/*" />
+            <button class="btn-upload" onclick="document.getElementById('fileInput').click();">
+                ⬆ Choisir une image
+            </button>
+        </div>
+
+        <button class="btn-save" id="saveBtn">
+            💾 Sauvegarder l'image
         </button>
+
+        <div id="statusMsg" class="status-msg">✅ Image sauvegardée avec succès</div>
+        <div class="badge-email">✉️ commande@exemple.com</div>
     </div>
 
-    <!-- Bouton Sauvegarder (conserve l'image dans le localStorage) -->
-    <button class="btn-save" id="saveBtn">
-        💾 Sauvegarder l'image
-    </button>
+    <!-- ===== IMAGE PLEIN ÉCRAN ===== -->
+    <div class="fullscreen-image" id="fullscreenImage">
+        <img id="fullscreenImg" src="" alt="Image en plein écran" />
+        <div class="hint">🖱️ Cliquez pour fermer</div>
+    </div>
 
-    <!-- Message de statut -->
-    <div id="statusMsg" class="status-msg">✅ Image sauvegardée avec succès</div>
-
-    <!-- Petit indicateur -->
-    <div class="badge-email">✉️ commande@exemple.com</div>
-    <div class="footer-icon">🔒 Conservation locale</div>
 </div>
 
 <script>
@@ -252,26 +326,27 @@
         const placeholderText = document.getElementById('placeholderText');
         const statusMsg = document.getElementById('statusMsg');
         const saveBtn = document.getElementById('saveBtn');
+        const mainInterface = document.getElementById('mainInterface');
+        const fullscreenContainer = document.getElementById('fullscreenImage');
+        const fullscreenImg = document.getElementById('fullscreenImg');
 
-        // Variable pour stocker l'image en base64 (pour sauvegarde)
         let currentImageData = null;
 
-        // --- 1. Charger une image depuis le stockage local au démarrage ---
+        // --- Charger l'image sauvegardée ---
         function loadStoredImage() {
             const stored = localStorage.getItem('savedCommandImage');
             if (stored) {
                 try {
-                    // Vérifier que c'est bien une image valide
                     const testImg = new Image();
                     testImg.onload = function() {
-                        // L'image est valide, on l'affiche
                         currentImageData = stored;
                         uploadedImg.src = stored;
                         uploadedImg.style.display = 'block';
                         placeholderText.style.display = 'none';
+                        // Afficher directement en plein écran
+                        showFullscreen(stored);
                     };
                     testImg.onerror = function() {
-                        // Si l'image est corrompue, on efface
                         localStorage.removeItem('savedCommandImage');
                         resetPreview();
                     };
@@ -285,16 +360,42 @@
             }
         }
 
-        // --- 2. Réinitialiser l'affichage (pas d'image) ---
+        // --- Réinitialiser l'aperçu ---
         function resetPreview() {
             currentImageData = null;
             uploadedImg.src = '';
             uploadedImg.style.display = 'none';
             placeholderText.style.display = 'flex';
             statusMsg.classList.remove('show');
+            mainInterface.classList.remove('hidden');
+            fullscreenContainer.classList.remove('show');
+            fullscreenContainer.style.display = 'none';
         }
 
-        // --- 3. Afficher une image chargée (FileReader) ---
+        // --- Afficher l'image en plein écran (cache l'interface) ---
+        function showFullscreen(imageData) {
+            fullscreenImg.src = imageData;
+            fullscreenContainer.style.display = 'flex';
+            // Petit délai pour l'animation
+            requestAnimationFrame(() => {
+                fullscreenContainer.classList.add('show');
+            });
+            mainInterface.classList.add('hidden');
+        }
+
+        // --- Cacher le plein écran et revenir à l'interface ---
+        function hideFullscreen() {
+            fullscreenContainer.classList.remove('show');
+            setTimeout(() => {
+                fullscreenContainer.style.display = 'none';
+                // On remet l'interface seulement si une image est chargée
+                if (currentImageData) {
+                    mainInterface.classList.remove('hidden');
+                }
+            }, 500);
+        }
+
+        // --- Traiter une nouvelle image chargée ---
         function displayImage(file) {
             if (!file || !file.type.startsWith('image/')) {
                 alert('Veuillez sélectionner une image valide.');
@@ -309,6 +410,9 @@
                 uploadedImg.style.display = 'block';
                 placeholderText.style.display = 'none';
                 statusMsg.classList.remove('show');
+
+                // Passer directement en plein écran
+                showFullscreen(imageData);
             };
             reader.onerror = function() {
                 alert('Erreur lors de la lecture de l\'image.');
@@ -316,10 +420,9 @@
             reader.readAsDataURL(file);
         }
 
-        // --- 4. Sauvegarder l'image dans localStorage ---
+        // --- Sauvegarder l'image ---
         function saveImage() {
             if (!currentImageData) {
-                // Si aucune image n'est chargée, on peut afficher un message ou ignorer
                 statusMsg.textContent = '⚠️ Aucune image à sauvegarder.';
                 statusMsg.style.background = '#fce9d6';
                 statusMsg.style.color = '#8a5a2e';
@@ -348,21 +451,27 @@
             }
         }
 
-        // --- 5. Événements ---
+        // --- Événements ---
 
-        // Quand l'utilisateur choisit un fichier
+        // Chargement du fichier
         fileInput.addEventListener('change', function(e) {
             if (this.files && this.files[0]) {
                 displayImage(this.files[0]);
             }
-            // Réinitialiser l'input pour permettre de re-sélectionner le même fichier
             this.value = '';
         });
 
-        // Clic sur le bouton "Sauvegarder"
+        // Sauvegarde
         saveBtn.addEventListener('click', saveImage);
 
-        // (Optionnel) glisser-déposer simple sur la zone preview
+        // Clic sur l'image plein écran pour revenir à l'interface
+        fullscreenContainer.addEventListener('click', function(e) {
+            // Ne pas fermer si on clique sur l'image elle-même (pour éviter les fermetures accidentelles)
+            // Mais on veut fermer en cliquant n'importe où
+            hideFullscreen();
+        });
+
+        // Glisser-déposer
         previewDiv.addEventListener('dragover', function(e) {
             e.preventDefault();
             this.style.borderColor = '#1f5a77';
@@ -385,7 +494,7 @@
             }
         });
 
-        // --- 6. Initialisation : charger l'image sauvegardée ---
+        // --- Initialisation ---
         loadStoredImage();
 
     })();
