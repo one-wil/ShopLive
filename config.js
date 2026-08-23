@@ -127,11 +127,85 @@ const STORE_CONFIG = {
       "createdAt": "2026-08-22T10:26:56.989Z",
       "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787394416989-1787394776340-modle6.jpg",
       "updatedAt": "2026-08-22T10:36:12.932Z"
+    },
+    "1787472725940": {
+      "name": "  حداء رياضي ",
+      "price": 4990,
+      "description": "حداء ياضي بمواصفات جد فاخرة ، مريح للقدمين ",
+      "category": "",
+      "stock": 0,
+      "featured": false,
+      "availableColors": [
+        "رمادي"
+      ],
+      "availableSizes": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "45"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "رمادي": {
+          "images": [
+            "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787472725940-رمادي-1787473289616-Screenshot-20260105-224958-Chrome.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "39"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "40"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "41"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "42"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "43"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "44"
+            },
+            {
+              "ageFrom": " ",
+              "ageTo": " ",
+              "size": "45"
+            }
+          ]
+        }
+      },
+      "sizeGuide": {
+        "enabled": false,
+        "guide": {}
+      },
+      "createdAt": "2026-08-23T08:12:05.940Z",
+      "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787472725940-1787472915472-Screenshot-20260105-224958-Chrome.jpg",
+      "updatedAt": "2026-08-23T08:23:38.901Z"
     }
   },
   "PRODUCT_ORDER": {
     "1787392573318": 1,
-    "1787394416989": 2
+    "1787394416989": 2,
+    "1787472725940": 3
   },
   "DELIVERY_PRICES": {
     "01 - أدرار": {
