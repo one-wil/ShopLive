@@ -411,13 +411,13 @@ const STORE_CONFIG = {
       "0671466488"
     ],
     "logo": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/store-logo-1787398149724-Screenshot-20260822-122550-Gallery.jpg",
-    "facebookUrl": ".",
-    "instagramUrl": ".",
-    "messengerUrl": ".",
+    "facebookUrl": ".xfgf",
+    "instagramUrl": ".xffxx",
+    "messengerUrl": ".xxxx",
     "viberNumber": "",
     "whatsappNumber": "213551102155",
     "whatsappUrl": "https://wa.me/213551102155",
-    "tiktokUrl": ".",
+    "tiktokUrl": ".ctgf",
     "storeIcon": "-",
     "storeTitle": "-"
   },
