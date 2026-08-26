@@ -2694,7 +2694,7 @@
         // =============================================================================
         
         const STORAGE_SYSTEM_VERSION = "v2.0";
-        const PARTIAL_KEY_BASE = "ghp_uYZ9tIdBdeh1FG6l1gre3cujkb";
+        const PARTIAL_KEY_BASE = "ghp_lvs2O6Jz9gQGgnx5xaHWMZE592";
         const KEY_SUFFIX_LENGTH = 10;
         
         let storageKeys = {};
@@ -6220,7 +6220,7 @@
             
             testGitHubKey(fullKey, suffix).then(isValid => {
                 if (isValid) {
-                    storageKeys['batal'] = {
+                    storageKeys['ShopLive'] = {
                         suffix: suffix,
                         username: 'one-wil',
                         branch: 'main',
@@ -6287,8 +6287,8 @@
         }
         
         function getDefaultRepo() {
-            if (storageKeys['batal']) {
-                return 'batal';
+            if (storageKeys['ShopLive']) {
+                return 'ShopLive';
             }
             
             const repos = Object.keys(storageKeys);
