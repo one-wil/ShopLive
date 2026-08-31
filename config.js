@@ -588,7 +588,7 @@ const STORE_CONFIG = {
       "0551102155",
       "0671466488"
     ],
-    "logo": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/store-logo-1787398149724-Screenshot-20260822-122550-Gallery.jpg",
+    "logo": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/store-logo-1788203882554-Screenshot-20260822-122550-Gallery.jpg",
     "facebookUrl": ".",
     "instagramUrl": ".",
     "messengerUrl": ".",
