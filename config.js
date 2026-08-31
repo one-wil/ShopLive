@@ -103,6 +103,11 @@ const STORE_CONFIG = {
               "ageFrom": "12",
               "ageTo": "8",
               "size": "M"
+            },
+            {
+              "ageFrom": "14",
+              "ageTo": "12",
+              "size": "L"
             }
           ]
         }
@@ -126,7 +131,7 @@ const STORE_CONFIG = {
       },
       "createdAt": "2026-08-22T10:26:56.989Z",
       "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787394416989-1787394776340-modle6.jpg",
-      "updatedAt": "2026-08-22T10:36:12.932Z"
+      "updatedAt": "2026-08-31T21:28:38.951Z"
     },
     "1787472725940": {
       "name": "Basket Nike ",
