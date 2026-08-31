@@ -103,11 +103,6 @@ const STORE_CONFIG = {
               "ageFrom": "12",
               "ageTo": "8",
               "size": "M"
-            },
-            {
-              "ageFrom": "14",
-              "ageTo": "12",
-              "size": "L"
             }
           ]
         }
@@ -131,7 +126,7 @@ const STORE_CONFIG = {
       },
       "createdAt": "2026-08-22T10:26:56.989Z",
       "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787394416989-1787394776340-modle6.jpg",
-      "updatedAt": "2026-08-31T21:28:38.951Z"
+      "updatedAt": "2026-08-22T10:36:12.932Z"
     },
     "1787472725940": {
       "name": "Basket Nike ",
@@ -593,7 +588,7 @@ const STORE_CONFIG = {
       "0551102155",
       "0671466488"
     ],
-    "logo": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/store-logo-1788203882554-Screenshot-20260822-122550-Gallery.jpg",
+    "logo": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/store-logo-1787398149724-Screenshot-20260822-122550-Gallery.jpg",
     "facebookUrl": ".",
     "instagramUrl": ".",
     "messengerUrl": ".",
