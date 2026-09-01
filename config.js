@@ -837,7 +837,7 @@ const STORE_CONFIG = {
   "PIXEL_CODES": {
     "facebook": {
       "enabled": true,
-      "pixelId": "2076696966571590",
+      "pixelId": "TEST76776",
       "events": {
         "pageView": true,
         "addToCart": true,
