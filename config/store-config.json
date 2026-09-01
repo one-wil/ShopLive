@@ -98,6 +98,11 @@
               "ageFrom": "12",
               "ageTo": "8",
               "size": "M"
+            },
+            {
+              "ageFrom": " 14",
+              "ageTo": " 12",
+              "size": "L"
             }
           ]
         }
@@ -121,7 +126,7 @@
       },
       "createdAt": "2026-08-22T10:26:56.989Z",
       "image": "https://raw.githubusercontent.com/one-wil/ShopLive/main/images/product-1787394416989-1787394776340-modle6.jpg",
-      "updatedAt": "2026-08-22T10:36:12.932Z"
+      "updatedAt": "2026-09-01T04:28:06.804Z"
     },
     "1787472725940": {
       "name": "Basket Nike ",
@@ -832,8 +837,8 @@
         "pageView": true,
         "addToCart": true,
         "purchase": true,
-        "initiateCheckout": true,
-        "viewContent": true
+        "initiateCheckout": false,
+        "viewContent": false
       }
     },
     "tiktok": {
