@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>StoreMaster V3 — Contrôle Automatique</title>
+<style>
+:root{--gold:#c9a227;--gold2:#efd26b;--black:#111;--bg:#f4f4f1;--card:#fff;--border:#e3e3df;--muted:#707070;--ok:#147a45;--warn:#a66b00;--bad:#b42318;--blue:#1769aa}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:var(--bg);color:#181818}
+.app{display:flex;min-height:100vh}aside{width:260px;position:fixed;inset:0 auto 0 0;background:#111;color:#fff;padding:18px 12px;z-index:5}.brand{padding:10px 12px 22px;border-bottom:1px solid #333;margin-bottom:15px}.brand b{font-size:22px;color:var(--gold2)}.brand small{display:block;color:#999;margin-top:5px}
+nav button{width:100%;padding:12px;border:0;border-radius:9px;background:transparent;color:#ddd;text-align:left;margin:3px 0;font-size:14px;cursor:pointer}nav button:hover,nav button.active{background:#292929;color:var(--gold2)}
+main{margin-left:260px;width:calc(100% - 260px);padding:25px}.hidden{display:none!important}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:20px}.top h1{margin:0;font-size:25px}.top p{margin:6px 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:16px}.stat b{display:block;font-size:28px;margin-top:7px}.muted{color:var(--muted);font-size:13px}
+.btn{border:0;border-radius:9px;padding:10px 14px;font-weight:bold;cursor:pointer}.primary{background:#111;color:var(--gold2)}.gold{background:var(--gold);color:#111}.light{background:#eee}.danger{background:#fee4e2;color:var(--bad)}.blue{background:#e7f1fb;color:var(--blue)}
+input,select{width:100%;padding:11px;border:1px solid #d7d7d7;border-radius:8px;font:inherit;background:white}.form{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field label{display:block;font-size:13px;font-weight:bold;margin-bottom:6px}.full{grid-column:1/-1}
+table{width:100%;border-collapse:collapse}th,td{padding:11px;border-bottom:1px solid var(--border);text-align:left;font-size:13px;vertical-align:top}th{color:#666}.badge{font-size:11px;padding:5px 8px;border-radius:99px;font-weight:bold}.ok{background:#e5f7ed;color:var(--ok)}.warn{background:#fff2d5;color:var(--warn)}.bad{background:#fee4e2;color:var(--bad)}.info{background:#e7f1fb;color:var(--blue)}
+.notice{padding:12px;border-radius:9px;background:#fff6d8;color:#765700;font-size:13px;line-height:1.5}.success{background:#e5f7ed;color:var(--ok)}.error{background:#fee9e7;color:var(--bad)}
+.templateGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.template{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}.preview{height:100px;background:linear-gradient(135deg,#141414,#484848);display:flex;align-items:center;justify-content:center;color:var(--gold2);font-weight:bold;font-size:20px}.template .body{padding:14px}
+.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:15px;z-index:20}.modal.show{display:flex}.dialog{width:min(850px,100%);max-height:92vh;overflow:auto;background:#fff;padding:22px;border-radius:16px}.foot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px;flex-wrap:wrap}
+.check{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid var(--border);border-radius:8px;margin:7px 0}.check small{margin-left:auto}.statusGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.checkItem{padding:12px;border:1px solid var(--border);border-radius:10px}.checkItem .name{font-weight:bold}.checkItem .detail{font-size:11px;color:var(--muted);word-break:break-all;margin-top:5px}.bigStatus{font-size:15px;padding:12px;border-radius:10px;background:#f7f7f7;margin-bottom:15px}.progress{height:10px;background:#eee;border-radius:99px;overflow:hidden}.bar{height:100%;background:var(--gold);width:0;transition:.3s}.repoBox{font-family:monospace;background:#f7f7f7;padding:10px;border-radius:8px;word-break:break-all}
+@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){aside{width:68px;padding:15px 7px}.brand b,.brand small,nav span{display:none}.brand:before{content:"SM";font-weight:bold;color:var(--gold2)}main{margin-left:68px;width:calc(100% - 68px);padding:15px}.form{grid-template-columns:1fr}.statusGrid{grid-template-columns:1fr}}@media(max-width:520px){.grid{grid-template-columns:1fr}.top{flex-direction:column}th:nth-child(4),td:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+ <div class="brand"><b>STOREMASTER V3</b><small>Contrôle automatique des boutiques</small></div>
+ <nav>
+  <button class="active" data-page="home">🏠 <span>Accueil</span></button>
+  <button data-page="clients">👥 <span>Clients</span></button>
+  <button data-page="stores">🏪 <span>Boutiques</span></button>
+  <button data-page="templates">🎨 <span>Templates</span></button>
+  <button data-page="create">➕ <span>Créer</span></button>
+  <button data-page="control">🔍 <span>Contrôle</span></button>
+  <button data-page="github">🔗 <span>GitHub</span></button>
+  <button data-page="settings">⚙️ <span>Paramètres</span></button>
+ </nav>
+</aside>
+<main>
+
+<section id="home" class="page">
+ <div class="top"><div><h1>StoreMaster V3</h1><p>Gestion + contrôle automatique de la structure des boutiques.</p></div><button class="btn gold" onclick="go('create')">➕ Nouvelle boutique</button></div>
+ <div id="githubState" class="notice">GitHub n'est pas configuré.</div><br>
+ <div class="grid">
+  <div class="card stat"><span class="muted">CLIENTS</span><b id="nClients">0</b></div>
+  <div class="card stat"><span class="muted">BOUTIQUES</span><b id="nStores">0</b></div>
+  <div class="card stat"><span class="muted">COMPLÈTES</span><b id="nComplete">0</b></div>
+  <div class="card stat"><span class="muted">À CORRIGER</span><b id="nProblems">0</b></div>
+  <div class="card stat"><span class="muted">TEMPLATES</span><b>5</b></div>
+ </div>
+ <div class="card"><h3>État récent</h3><div id="recent"></div></div>
+</section>
+
+<section id="clients" class="page hidden">
+ <div class="top"><div><h1>👥 Clients</h1><p>Gestion des propriétaires des boutiques.</p></div><button class="btn gold" onclick="openClient()">➕ Ajouter</button></div>
+ <div class="card"><div id="clientsList"></div></div>
+</section>
+
+<section id="stores" class="page hidden">
+ <div class="top"><div><h1>🏪 Boutiques</h1><p>Une boutique = un Repository GitHub indépendant.</p></div><button class="btn gold" onclick="go('create')">➕ Créer</button></div>
+ <div class="card">
+  <button class="btn primary" onclick="verifyAllStores()">🔄 Contrôler toutes les boutiques</button>
+  <p class="muted">Le contrôle vérifie Repository, fichiers obligatoires et dossier images.</p>
+  <div id="storesList"></div>
+ </div>
+</section>
+
+<section id="templates" class="page hidden">
+ <div class="top"><div><h1>🎨 Mes 5 Templates</h1><p>Templates sources de vos boutiques.</p></div></div>
+ <div id="templates" class="templateGrid"></div>
+</section>
+
+<section id="create" class="page hidden">
+ <div class="top"><div><h1>➕ Créer une fiche boutique</h1><p>Création manuelle du Repository, puis contrôle automatique.</p></div></div>
+ <div class="card">
+  <div class="notice">📌 Processus : vous créez manuellement le Repository et copiez le Template. Ensuite StoreMaster V3 contrôle automatiquement la structure.</div><br>
+  <form id="createForm"><div class="form">
+   <div class="field"><label>Client</label><select id="storeClient" required></select></div>
+   <div class="field"><label>Nom boutique</label><input id="storeName" required placeholder="Ahmed Fashion"></div>
+   <div class="field"><label>Template choisi</label><select id="storeTemplate"></select></div>
+   <div class="field"><label>Repository GitHub</label><input id="storeRepo" required placeholder="ahmed-fashion"></div>
+   <div class="field full"><label>URL Cloudflare Pages</label><input id="storeUrl" placeholder="https://ahmed-fashion.pages.dev"></div>
+  </div><div class="foot"><button class="btn primary">Créer la boutique</button></div></form>
+ </div>
+</section>
+
+<section id="control" class="page hidden">
+ <div class="top"><div><h1>🔍 Centre de contrôle</h1><p>Vérification automatique de chaque boutique.</p></div></div>
+ <div class="card">
+  <div class="form"><div class="field"><label>Choisir une boutique</label><select id="controlStore"></select></div><div class="field"><label>Actions</label><button class="btn primary" type="button" onclick="verifySelected()">🔍 Lancer le contrôle complet</button></div></div>
+ </div>
+ <div id="controlResult" class="card"><p class="muted">Choisissez une boutique puis lancez le contrôle.</p></div>
+</section>
+
+<section id="github" class="page hidden">
+ <div class="top"><div><h1>🔗 Configuration GitHub</h1><p>GitHub API sert uniquement au contrôle des Repositories.</p></div></div>
+ <div class="card">
+  <div class="notice">🔐 Le Token n'est pas inséré dans les fichiers des clients. Cette version le conserve localement dans le navigateur du Master Dashboard. Pour une version professionnelle, le Token doit être déplacé vers un serveur backend.</div><br>
+  <div class="form"><div class="field"><label>GitHub Owner / Organisation</label><input id="ghOwner" placeholder="mon-organisation"></div><div class="field"><label>GitHub Token</label><input id="ghToken" type="password" placeholder="Token GitHub"></div></div>
+  <div class="foot"><button class="btn light" onclick="testGithub()">Tester</button><button class="btn primary" onclick="saveGithub()">Enregistrer localement</button><button class="btn danger" onclick="clearGithub()">Supprimer</button></div>
+  <div id="ghResult"></div>
+ </div>
+ <div class="card"><h3>Repositories GitHub</h3><button class="btn gold" onclick="loadRepos()">📥 Charger</button><div id="repos"></div></div>
+</section>
+
+<section id="settings" class="page hidden">
+ <div class="top"><div><h1>⚙️ Paramètres</h1><p>Sauvegarde locale.</p></div></div>
+ <div class="card"><h3>Export</h3><button class="btn primary" onclick="exportData()">⬇️ Exporter les données</button></div>
+ <div class="card"><h3>Réinitialisation</h3><button class="btn danger" onclick="resetData()">🗑️ Réinitialiser</button></div>
+</section>
+
+</main></div>
+
+<div class="modal" id="clientModal"><div class="dialog">
+<h2>Client</h2>
+<form id="clientForm"><input type="hidden" id="clientId"><div class="form">
+<div class="field"><label>Nom</label><input id="clientName" required></div><div class="field"><label>Email</label><input id="clientEmail" type="email"></div>
+<div class="field"><label>Téléphone</label><input id="clientPhone"></div><div class="field"><label>Statut</label><select id="clientStatus"><option>Active</option><option>Suspended</option></select></div>
+</div><div class="foot"><button type="button" class="btn light" onclick="closeModal('clientModal')">Annuler</button><button class="btn primary">Enregistrer</button></div></form>
+</div></div>
+
+<div class="modal" id="storeModal"><div class="dialog"><h2 id="storeModalTitle"></h2><div id="storeModalBody"></div><div class="foot"><button class="btn light" onclick="closeModal('storeModal')">Fermer</button></div></div></div>
+
+<script>
+/* =========================
+   STOREMASTER V3
+   Contrôle des fichiers :
+   index.html
+   adm.html
+   config.js
+   config/store-config.json
+   images/
+========================= */
+const TEMPLATES=[
+ {id:'template-01',name:'Template 01',repo:'template-01-original'},
+ {id:'template-02',name:'Template 02',repo:'template-02-original'},
+ {id:'template-03',name:'Template 03',repo:'template-03-original'},
+ {id:'template-04',name:'Template 04',repo:'template-04-original'},
+ {id:'template-05',name:'Template 05',repo:'template-05-original'}
+];
+const REQUIRED=[
+ {key:'repo',path:'Repository',label:'Repository GitHub'},
+ {key:'index',path:'index.html',label:'Boutique principale'},
+ {key:'adm',path:'adm.html',label:'Dashboard boutique'},
+ {key:'configjs',path:'config.js',label:'Configuration boutique'},
+ {key:'configjson',path:'config/store-config.json',label:'Configuration Dashboard'},
+ {key:'images',path:'images/',label:'Dossier images'}
+];
+
+let db=JSON.parse(localStorage.getItem('storemaster_v3_db')||'{"clients":[],"stores":[]}');
+let gh=JSON.parse(localStorage.getItem('storemaster_v3_github')||'{"owner":"","token":""}');
+const $=x=>document.getElementById(x);
+function save(){localStorage.setItem('storemaster_v3_db',JSON.stringify(db))}
+function saveGH(){localStorage.setItem('storemaster_v3_github',JSON.stringify(gh))}
+function uid(p){return p+'-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function esc(s=''){return String(s).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]))}
+function badge(s){return `<span class="badge ${s==='Complete'?'ok':s==='Problem'?'bad':'warn'}">${esc(s)}</span>`}
+function score(s){let r=s.control?.results||{};return REQUIRED.filter(x=>r[x.key]?.exists).length}
+function state(s){if(!s.control)return 'Pending';let n=score(s);return n===REQUIRED.length?'Complete':n===0?'Problem':'Partial'}
+
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
+function go(p){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));$(p).classList.remove('hidden');document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===p));render()}
+function render(){
+ let complete=db.stores.filter(s=>state(s)==='Complete').length, problems=db.stores.filter(s=>s.control&&state(s)!=='Complete').length;
+ $('nClients').textContent=db.clients.length;$('nStores').textContent=db.stores.length;$('nComplete').textContent=complete;$('nProblems').textContent=problems;
+ $('githubState').className='notice '+(gh.owner&&gh.token?'success':'');$('githubState').textContent=gh.owner&&gh.token?'✓ GitHub configuré : '+gh.owner:'GitHub n’est pas configuré.';
+ $('recent').innerHTML=db.stores.length?`<table><tr><th>Boutique</th><th>Structure</th><th>État</th></tr>${[...db.stores].slice(-8).reverse().map(s=>`<tr><td>${esc(s.name)}</td><td>${score(s)}/${REQUIRED.length}</td><td>${badge(state(s))}</td></tr>`).join('')}</table>`:'<p class="muted">Aucune boutique.</p>';
+ $('clientsList').innerHTML=db.clients.length?`<table><tr><th>Client</th><th>Email</th><th>Téléphone</th><th></th></tr>${db.clients.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.email||'-')}</td><td>${esc(c.phone||'-')}</td><td><button class="btn light" onclick="openClient('${c.id}')">✏️</button> <button class="btn danger" onclick="deleteClient('${c.id}')">🗑️</button></td></tr>`).join('')}</table>`:'<p class="muted">Aucun client.</p>';
+ $('storesList').innerHTML=db.stores.length?`<table><tr><th>Boutique</th><th>Repository</th><th>Fichiers</th><th>État</th><th></th></tr>${db.stores.map(s=>`<tr><td><b>${esc(s.name)}</b><br><small>${esc(s.template)}</small></td><td>${esc(s.repo)}</td><td>${score(s)}/${REQUIRED.length}</td><td>${badge(state(s))}</td><td><button class="btn blue" onclick="openStore('${s.id}')">🔍</button> <button class="btn danger" onclick="deleteStore('${s.id}')">🗑️</button></td></tr>`).join('')}</table>`:'<p class="muted">Aucune boutique.</p>';
+ $('templates').innerHTML=TEMPLATES.map(t=>`<div class="template"><div class="preview">${t.name}</div><div class="body"><b>${t.name}</b><p class="muted">${esc(t.repo)}</p><button class="btn primary" onclick="chooseTemplate('${t.id}')">Choisir</button></div></div>`).join('');
+ $('storeClient').innerHTML=db.clients.length?'<option value="">-- Choisir --</option>'+db.clients.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join(''):'<option value="">Créez un client</option>';
+ $('storeTemplate').innerHTML=TEMPLATES.map(t=>`<option>${t.name}</option>`).join('');
+ $('controlStore').innerHTML=db.stores.length?'<option value="">-- Choisir une boutique --</option>'+db.stores.map(s=>`<option value="${s.id}">${esc(s.name)} — ${esc(s.repo)}</option>`).join(''):'<option value="">Aucune boutique</option>';
+ $('ghOwner').value=gh.owner;$('ghToken').value=gh.token;
+}
+function openClient(id=''){let c=db.clients.find(x=>x.id===id)||{};$('clientId').value=c.id||'';$('clientName').value=c.name||'';$('clientEmail').value=c.email||'';$('clientPhone').value=c.phone||'';$('clientStatus').value=c.status||'Active';$('clientModal').classList.add('show')}
+$('clientForm').onsubmit=e=>{e.preventDefault();let d={name:$('clientName').value,email:$('clientEmail').value,phone:$('clientPhone').value,status:$('clientStatus').value};let id=$('clientId').value;if(id)Object.assign(db.clients.find(x=>x.id===id),d);else db.clients.push({id:uid('CL'),...d});save();closeModal('clientModal');render()}
+function closeModal(id){$(id).classList.remove('show')}
+function deleteClient(id){if(db.stores.some(s=>s.clientId===id))return alert('Ce client possède une ou plusieurs boutiques.');if(confirm('Supprimer ce client ?')){db.clients=db.clients.filter(c=>c.id!==id);save();render()}}
+$('createForm').onsubmit=e=>{e.preventDefault();if(!$('storeClient').value)return alert('Choisissez un client.');db.stores.push({id:uid('ST'),clientId:$('storeClient').value,name:$('storeName').value.trim(),template:$('storeTemplate').value,repo:$('storeRepo').value.trim(),url:$('storeUrl').value.trim(),status:'Active',control:null});save();e.target.reset();render();go('stores')}
+function chooseTemplate(id){let t=TEMPLATES.find(x=>x.id===id);go('create');$('storeTemplate').value=t.name}
+
+function ghHeaders(){return {'Authorization':'Bearer '+gh.token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}}
+async function ghFetch(path){
+ if(!gh.owner||!gh.token)throw new Error('Configurez GitHub et le Token.');
+ let r=await fetch('https://api.github.com'+path,{headers:ghHeaders()});
+ if(r.status===404)return {__notFound:true};
+ if(!r.ok)throw new Error('GitHub '+r.status);
+ return r.json();
+}
+async function testGithub(){
+ gh.owner=$('ghOwner').value.trim();gh.token=$('ghToken').value.trim();
+ try{let u=await ghFetch('/user');$('ghResult').innerHTML=`<div class="notice success">✓ Connexion réussie : ${esc(u.login)}</div>`}
+ catch(err){$('ghResult').innerHTML=`<div class="notice error">✗ ${esc(err.message)}</div>`}
+}
+function saveGithub(){gh.owner=$('ghOwner').value.trim();gh.token=$('ghToken').value.trim();saveGH();render();alert('Configuration enregistrée localement.')}
+function clearGithub(){gh={owner:'',token:''};saveGH();render();$('ghResult').innerHTML=''}
+async function loadRepos(){
+ try{$('repos').innerHTML='<p class="muted">Chargement...</p>';let a=await ghFetch('/users/'+encodeURIComponent(gh.owner)+'/repos?per_page=100&sort=updated');$('repos').innerHTML=Array.isArray(a)?`<table><tr><th>Repository</th><th>URL</th><th>Mis à jour</th></tr>${a.map(r=>`<tr><td>${esc(r.name)}</td><td><a target="_blank" href="${esc(r.html_url)}">Ouvrir</a></td><td>${esc(r.updated_at||'')}</td></tr>`).join('')}</table>`:'<div class="notice error">Impossible de charger les repositories.</div>'}catch(err){$('repos').innerHTML=`<div class="notice error">${esc(err.message)}</div>`}
+}
+
+async function checkPath(repo,path,type='file'){
+ try{
+  let r=await ghFetch('/repos/'+encodeURIComponent(gh.owner)+'/'+encodeURIComponent(repo)+'/contents/'+path);
+  if(r.__notFound)return {exists:false};
+  if(type==='dir')return {exists:Array.isArray(r)||r.type==='dir',detail:Array.isArray(r)?r.length+' élément(s)':'Dossier trouvé'};
+  return {exists:r.type==='file',detail:r.type==='file'?'Fichier trouvé':'Type incorrect'};
+ }catch(err){return {exists:false,error:err.message}}
+}
+async function controlStore(s){
+ if(!gh.owner||!gh.token)throw new Error('Configurez GitHub avant le contrôle.');
+ let results={};
+ let repoCheck=await ghFetch('/repos/'+encodeURIComponent(gh.owner)+'/'+encodeURIComponent(s.repo));
+ results.repo=repoCheck.__notFound?{exists:false}:{exists:true,detail:'Repository trouvé'};
+ results.index=await checkPath(s.repo,'index.html');
+ results.adm=await checkPath(s.repo,'adm.html');
+ results.configjs=await checkPath(s.repo,'config.js');
+ results.configjson=await checkPath(s.repo,'config/store-config.json');
+ results.images=await checkPath(s.repo,'images','dir');
+ s.control={checkedAt:new Date().toISOString(),results};
+ save();
+ return s;
+}
+async function verifySelected(){
+ let id=$('controlStore').value;if(!id)return alert('Choisissez une boutique.');
+ let s=db.stores.find(x=>x.id===id);$('controlResult').innerHTML='<p class="muted">🔄 Contrôle en cours...</p>';
+ try{await controlStore(s);renderControl(s);render()}catch(err){$('controlResult').innerHTML=`<div class="notice error">Erreur : ${esc(err.message)}</div>`}
+}
+async function verifyAllStores(){
+ if(!db.stores.length)return alert('Aucune boutique.');if(!gh.owner||!gh.token)return alert('Configurez GitHub.');
+ let done=0;
+ for(const s of db.stores){try{await controlStore(s)}catch{}done++;$('recent').innerHTML=`<div class="notice">Contrôle en cours : ${done}/${db.stores.length}</div>`}
+ render();alert('Contrôle terminé.');
+}
+function renderControl(s){
+ let r=s.control.results, n=score(s), pct=Math.round(n/REQUIRED.length*100);
+ $('controlResult').innerHTML=`
+ <div class="bigStatus"><b>${esc(s.name)}</b><br><span class="muted">${esc(gh.owner)}/${esc(s.repo)}</span><p>${badge(state(s))} &nbsp; ${n}/${REQUIRED.length} éléments corrects</p><div class="progress"><div class="bar" style="width:${pct}%"></div></div></div>
+ <div class="statusGrid">${REQUIRED.map(x=>{let z=r[x.key]||{};return `<div class="checkItem"><div class="name">${z.exists?'✅':'❌'} ${esc(x.label)}</div><div class="detail">${esc(x.path)} ${z.detail?'— '+esc(z.detail):z.error?'— '+esc(z.error):''}</div></div>`}).join('')}</div>
+ <div class="foot"><button class="btn primary" onclick="openStore('${s.id}')">Voir les détails</button></div>`;
+}
+function openStore(id){
+ let s=db.stores.find(x=>x.id===id),c=db.clients.find(x=>x.id===s.clientId),r=s.control?.results||{};
+ $('storeModalTitle').textContent='🏪 '+s.name;
+ $('storeModalBody').innerHTML=`<p><b>Client :</b> ${esc(c?.name||'-')}</p><p><b>Template :</b> ${esc(s.template)}</p><p><b>Cloudflare :</b> ${s.url?`<a href="${esc(s.url)}" target="_blank">${esc(s.url)}</a>`:'Non renseignée'}</p><div class="repoBox">${esc(gh.owner||'OWNER')}/${esc(s.repo)}</div><hr style="border:0;border-top:1px solid #eee;margin:18px 0"><h3>Structure obligatoire</h3>${REQUIRED.map(x=>{let z=r[x.key];return `<div class="check">${z?.exists?'✅':'❌'} <b>${esc(x.path)}</b><small>${z?.exists?'OK':'Non vérifié ou absent'}</small></div>`}).join('')}<div class="foot"><button class="btn gold" onclick="runFromModal('${s.id}')">🔄 Contrôler maintenant</button></div>`;
+ $('storeModal').classList.add('show');
+}
+async function runFromModal(id){let s=db.stores.find(x=>x.id===id);try{await controlStore(s);openStore(id);render()}catch(err){alert(err.message)}}
+function deleteStore(id){if(confirm('Supprimer la fiche locale ? Le Repository GitHub ne sera jamais supprimé.')){db.stores=db.stores.filter(s=>s.id!==id);save();render()}}
+function exportData(){let b=new Blob([JSON.stringify({data:db,githubOwner:gh.owner},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='storemaster-v3-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function resetData(){if(confirm('Supprimer toutes les données locales ?')){db={clients:[],stores:[]};save();render()}}
+render();
+</script>
+</body>
+</html>
