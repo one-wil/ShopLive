@@ -5197,7 +5197,9 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="commune">البلدية</label>
-                            <input type="text" id="commune" name="commune" required autocomplete="address-level2" oninput="handleFieldInput(this)">
+                            <select id="commune" name="commune" required autocomplete="address-level2" onchange="handleFieldInput(this)">
+                                <option value="">اختر الولاية أولاً</option>
+                            </select>
                         </div>
                         
                         <!-- عنوان المجال (يظهر فقط عند اختيار توصيل للمنزل) -->
@@ -7323,7 +7325,46 @@
         }
 
         // ===== Delivery Management =====
+        // ===== تحميل دوائر الولاية من config.js فقط =====
+        function updateDairaOptions(wilayaValue) {
+            const dairaSelect = document.getElementById('commune');
+            if (!dairaSelect) return;
+
+            dairaSelect.innerHTML = '<option value="">اختر الدائرة</option>';
+            dairaSelect.disabled = true;
+
+            if (!wilayaValue || typeof STORE_CONFIG === 'undefined' || !STORE_CONFIG.DAIRAS) {
+                dairaSelect.innerHTML = '<option value="">اختر الولاية أولاً</option>';
+                return;
+            }
+
+            // يدعم: 43 - ميلة / 43 / أي نص يحتوي على رمز الولاية
+            const match = String(wilayaValue).match(/\b(\d{1,2})\b/);
+            if (!match) return;
+
+            const code = match[1].padStart(2, '0');
+            const data = STORE_CONFIG.DAIRAS[code];
+            const dairas = Array.isArray(data) ? data : (data && Array.isArray(data.dairas) ? data.dairas : []);
+
+            if (dairas.length === 0) {
+                dairaSelect.innerHTML = '<option value="">لا توجد دوائر مسجلة لهذه الولاية</option>';
+                return;
+            }
+
+            dairas.forEach(daira => {
+                const name = typeof daira === 'string' ? daira : (daira.name_ar || daira.name || '');
+                if (!name) return;
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                dairaSelect.appendChild(option);
+            });
+
+            dairaSelect.disabled = false;
+        }
+
         function handleWilayaChange() {
+            updateDairaOptions(document.getElementById('wilaya')?.value || "");
             const wilayaSelect = document.getElementById('wilaya');
             selectedWilaya = wilayaSelect.value;
             
@@ -8003,6 +8044,7 @@
                     wilayaSelect.appendChild(option);
                 });
             }
+            updateDairaOptions('');
         }
 
         // ===== Function to Get Size Guide =====
