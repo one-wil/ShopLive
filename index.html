@@ -12638,6 +12638,28 @@ let tries=0; const timer=setInterval(()=>{tries++;if(install()||tries>=40)clearI
 })();
 </script>
 
+
+<style id="smart-checkout-green-glow-final">
+/* توهج أخضر مضيء لعبارة إتمام الطلب – أكمل طلبك في بطاقة السلة */
+#page2 #smartCheckoutIntro .smart-kicker,
+#page2 #smartCheckoutIntro h1{
+  color:#39ff88 !important;
+  text-shadow:0 0 4px rgba(57,255,136,.9),
+              0 0 10px rgba(34,255,119,.75),
+              0 0 20px rgba(0,230,100,.55) !important;
+}
+#page2 #smartCheckoutIntro .smart-kicker i{
+  color:#7dffb0 !important;
+  filter:drop-shadow(0 0 7px rgba(57,255,136,.95));
+}
+#page2 #smartCheckoutIntro.smart-intro-black-pulse .smart-kicker,
+#page2 #smartCheckoutIntro.smart-intro-black-pulse h1{
+  color:#39ff88 !important;
+  text-shadow:0 0 5px rgba(57,255,136,.95),
+              0 0 12px rgba(34,255,119,.8),
+              0 0 22px rgba(0,230,100,.65) !important;
+}
+</style>
 </body>
 
 <style id="index31-size-motion-absolute-final">
