@@ -8857,19 +8857,34 @@ updateDeliveryCost();
         }
 
         function getBuyXGetYFreeQuantityForItem(itemId) {
+            // تُوزَّع القطع المجانية على أسطر المنتج نفسه مرة واحدة فقط،
+            // حتى لو اختار الزبون ألوانًا أو مقاسات مختلفة للمنتج ذاته.
             if (!STORE_CONFIG.DISCOUNTS?.enableBuyXGetY) return 0;
-            const itemIndex = cartItems.findIndex(i => i.id === itemId);
+
+            const itemIndex = cartItems.findIndex(i => String(i.id) === String(itemId));
             if (itemIndex < 0) return 0;
+
             const item = cartItems[itemIndex];
             if (!isBuyXGetYEligible(item.key)) return 0;
+
             const cfg = getBuyXGetYConfig();
-            const totalForProduct = cartItems.reduce((sum, i) => String(i.key) === String(item.key) ? sum + (Number(i.quantity) || 0) : sum, 0);
-            let remainingFree = Math.floor(totalForProduct / cfg.buy) * cfg.free;
-            for (let i = 0; i < itemIndex; i++) {
-                const prev = cartItems[i];
-                if (String(prev.key) === String(item.key)) remainingFree -= Math.min(Number(prev.quantity) || 0, Math.max(0, Math.floor(totalForProduct / cfg.group) * cfg.free));
-            }
-            return Math.max(0, Math.min(Number(item.quantity) || 0, remainingFree));
+            const sameProductItems = cartItems.filter(i => String(i.key) === String(item.key));
+            const totalForProduct = sameProductItems.reduce(
+                (sum, i) => sum + Math.max(0, Number(i.quantity) || 0), 0
+            );
+            const totalFreeForProduct = Math.floor(totalForProduct / cfg.buy) * cfg.free;
+
+            // عدد القطع المدفوعة من المنتج نفسه التي سبقت هذا السطر.
+            const quantityBefore = cartItems.slice(0, itemIndex).reduce((sum, i) => {
+                return String(i.key) === String(item.key)
+                    ? sum + Math.max(0, Number(i.quantity) || 0)
+                    : sum;
+            }, 0);
+
+            // لا يمكن أن يتجاوز المجاني المخصص لهذا السطر رصيده أو كميته.
+            const freeAllocatedBefore = Math.min(quantityBefore, totalFreeForProduct);
+            const remainingFree = Math.max(0, totalFreeForProduct - freeAllocatedBefore);
+            return Math.min(Math.max(0, Number(item.quantity) || 0), remainingFree);
         }
 
         function getBuyXGetYFreeQuantityByProduct(productKey) {
