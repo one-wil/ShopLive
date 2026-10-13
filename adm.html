@@ -2246,7 +2246,12 @@
         }
         .about-support-content {
             flex: 1;
-            text-align: right;
+            text-align: center;
+        }
+        .about-support-title,
+        .about-support-subtitle {
+            text-align: center;
+            width: 100%;
         }
         .about-support-title {
             font-size: clamp(22px, 3vw, 30px);
@@ -2261,7 +2266,9 @@
         .about-support-numbers {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            justify-content: center;
+            align-items: stretch;
+            gap: 16px;
         }
         .about-support-numbers a {
             display: inline-flex;
@@ -2411,6 +2418,18 @@
         #subscription .subscription-price-card { direction: rtl; }
 
         /* بطاقة اشتراك StoreMaster */
+        /* شارة صغيرة لصلاحية المتجر في الصفحة الرئيسية */
+        .dashboard-home-heading-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;direction:rtl}
+        .dashboard-home-heading-top h2{margin:0}
+        .home-validity-badge{display:inline-flex;align-items:center;justify-content:center;gap:8px;max-width:100%;padding:8px 13px;border:1px solid #b7e4c7;border-radius:999px;background:#eafaf0;color:#176b3a;font-family:inherit;font-size:13px;font-weight:800;line-height:1.5;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;direction:rtl;text-align:right}
+        .home-validity-badge:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+        .home-validity-badge.warning{background:#fff3d6;border-color:#f4b942;color:#8a5200;animation:homeValidityPulse 1.15s ease-in-out infinite}
+        .home-validity-badge.expired{background:#ffe8e6;border-color:#ef9a9a;color:#a61e1e}
+        .home-validity-badge.unknown{background:#f1f3f5;border-color:#d8dee4;color:#495057}
+        @keyframes homeValidityPulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.12)}50%{box-shadow:0 0 0 5px rgba(245,158,11,.2)}}
+        @media(prefers-reduced-motion:reduce){.home-validity-badge.warning{animation:none}}
+        @media(max-width:600px){.dashboard-home-heading-top{align-items:flex-start}.home-validity-badge{font-size:12px;padding:7px 10px}}
+
         .subscription-state-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow);color:var(--gray)}
         .subscription-summary-card{display:flex;align-items:center;gap:18px;padding:24px;border-radius:18px;background:linear-gradient(135deg,#1a1b2e,#3a0ca3);color:#fff;box-shadow:var(--shadow-lg);margin-bottom:20px}
         .subscription-summary-icon{width:64px;height:64px;flex:0 0 64px;border-radius:18px;background:rgba(255,255,255,.13);display:grid;place-items:center;font-size:28px;color:#fff}
@@ -2424,9 +2443,171 @@
         .subscription-pricing-reference{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
         .subscription-pricing-reference h3{margin:0 0 16px}.subscription-pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
         .subscription-price-card{border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;background:#f8f9ff}.subscription-price-card span{display:block;color:var(--gray);font-size:13px;margin-bottom:7px}.subscription-price-card strong{font-size:19px;color:var(--dark)}.subscription-price-card.selected{border:2px solid var(--primary);background:#eef1ff;box-shadow:0 0 0 3px rgba(67,97,238,.08)}
-        .subscription-footnote{margin-top:16px;color:var(--gray);font-size:13px;line-height:1.8}.subscription-alert{padding:15px 18px;border-radius:12px;margin-bottom:18px;font-weight:700;line-height:1.8;background:#fff4d7;color:#875b00;border-right:5px solid #f8961e}.subscription-alert.danger{background:#ffe8e6;color:#a61e4d;border-right-color:#d90429}.subscription-alert.success{background:#e6f7ed;color:#16824b;border-right-color:#16824b}
+         .subscription-payment-details{display:grid;gap:12px;margin-top:18px;padding:16px;border:1px solid rgba(67,97,238,.18);border-radius:16px;background:linear-gradient(135deg,#f8faff,#eef8ff);direction:rtl}
+.payment-manager-row,.payment-rip-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;background:#fff;border:1px solid #e4eaf5;border-radius:12px}
+.payment-manager-row>span,.payment-rip-row>span{color:#4b587c;font-weight:700;display:flex;align-items:center;gap:7px}
+.payment-manager-row strong{margin-right:auto;color:#18234a;font-size:16px}\n.payment-manager-row .subscription-owner-prefix{color:#53658c;font-weight:700;display:inline-flex;align-items:center}
+.payment-rip-row strong{margin-right:auto;color:#172554;font-size:16px;letter-spacing:.5px}
+.payment-rip-row .rip-account-holder{flex:0 0 100%;width:100%;order:10;margin-top:5px;padding:10px 12px;border-radius:9px;background:linear-gradient(90deg,#eef4ff,#f7faff);border:1px solid #dce7ff;color:#243b75;font-size:14px;font-weight:800;letter-spacing:.15px;text-align:left;direction:ltr}
+.payment-rip-row .rip-account-holder i{color:#4361ee;margin-right:6px}
+.payment-rip-row .rip-account-holder span{font-weight:600;color:#53658c}
+
+.copy-payment-btn{width:38px;height:38px;flex:0 0 38px;border:0;border-radius:10px;background:linear-gradient(135deg,#4361ee,#4895ef);color:#fff;cursor:pointer;box-shadow:0 4px 12px rgba(67,97,238,.2);transition:transform .2s,box-shadow .2s}
+.copy-payment-btn:active{transform:scale(.92)}
+.payment-methods-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.payment-method-chip{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:12px 8px;border-radius:12px;background:#eafaf2;border:1px solid #b7ebce;color:#087443;font-weight:800}
+.payment-method-chip>i{font-size:18px;color:#16a765}
+.payment-method-chip b{font-size:11px;background:#16a765;color:#fff;padding:3px 7px;border-radius:20px}
+.subscription-contact-footer>p{line-height:1.9}
+@media(max-width:480px){.payment-manager-row,.payment-rip-row{gap:8px;padding:10px}.payment-manager-row strong,.payment-rip-row strong{font-size:13px}.payment-methods-row{gap:7px}.payment-method-chip{font-size:12px}}
+.subscription-footnote{margin-top:16px;color:var(--gray);font-size:13px;line-height:1.8}.subscription-alert{padding:15px 18px;border-radius:12px;margin-bottom:18px;font-weight:700;line-height:1.8;background:#fff4d7;color:#875b00;border-right:5px solid #f8961e}.subscription-alert.danger{background:#ffe8e6;color:#a61e4d;border-right-color:#d90429}.subscription-alert.success{background:#e6f7ed;color:#16824b;border-right-color:#16824b}
         @media(max-width:600px){.subscription-summary-card{align-items:flex-start;padding:17px}.subscription-summary-icon{width:48px;height:48px;flex-basis:48px;font-size:21px}.subscription-summary-main h3{font-size:19px}.subscription-pricing-grid{grid-template-columns:1fr}.subscription-detail strong{font-size:16px}}
-</style>
+
+        /* StoreMaster: اختيار وتغيير قالب المتجر */
+        .template-switch-menu-item{position:relative}
+        .template-switch-menu-item::after{content:"جديد";position:absolute;left:10px;top:9px;font-size:9px;font-weight:900;color:#111;background:#ffd54a;border-radius:999px;padding:2px 6px}
+        .store-template-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.store-template-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(35,55,110,.13)}
+.store-template-card button{min-height:44px;position:relative;overflow:hidden}
+.store-template-card button:disabled{opacity:.8;cursor:wait}
+.template-switch-loading{background:linear-gradient(110deg,#4361ee,#7209b7,#4361ee)!important;background-size:200% 100%!important;animation:templateButtonShimmer 1.4s linear infinite}
+.template-spinner{width:17px;height:17px;border-width:2px;vertical-align:middle;margin-inline-end:7px}
+@keyframes templateButtonShimmer{to{background-position:-200% 0}}
+.template-switch-notice{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;border-radius:16px;border:1px solid rgba(76,201,240,.25);background:linear-gradient(135deg,rgba(67,97,238,.13),rgba(76,201,240,.06));margin:18px 0;color:var(--dark)}
+        .template-switch-notice>i{font-size:23px;color:#4cc9f0;margin-top:2px}
+        .template-switch-notice strong{display:block;font-size:15px;margin-bottom:4px}
+        .template-switch-notice p{font-size:12px;line-height:1.8;opacity:.88}
+        .template-current-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;margin:18px 0;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025))}
+        .template-current-card>div{display:grid;gap:4px}
+        .template-muted-label{font-size:11px;color:var(--gray)}
+        .template-current-card strong{font-size:17px;color:var(--dark)}
+        .template-current-card small{font-size:11px;color:var(--gray)}
+        .store-template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}
+        .store-template-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:18px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:linear-gradient(155deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 8px 24px rgba(0,0,0,.09);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;min-width:0}
+        .store-template-card:hover{transform:translateY(-3px);border-color:rgba(76,201,240,.6);box-shadow:0 12px 28px rgba(0,0,0,.15)}
+        .store-template-card.is-current{border:2px solid #4cc9f0;background:linear-gradient(145deg,rgba(76,201,240,.14),rgba(67,97,238,.07))}
+        .store-template-card.is-current::before{content:"القالب المعتمد";position:absolute;top:12px;left:12px;font-size:10px;font-weight:900;padding:4px 8px;border-radius:999px;background:#4cc9f0;color:#10202a}
+        .store-template-card-head{display:flex;align-items:center;gap:12px;padding-top:8px}
+        .store-template-icon{display:grid;place-items:center;width:48px;height:48px;flex:0 0 48px;border-radius:14px;background:linear-gradient(135deg,#4361ee,#7209b7);color:white;font-size:20px;box-shadow:0 5px 16px rgba(67,97,238,.25)}
+        .store-template-card h3{font-size:15px;color:var(--dark);overflow-wrap:anywhere}
+        .store-template-card .template-id{font-size:10px;color:var(--gray);direction:ltr;text-align:right}
+        .store-template-card p{font-size:12px;line-height:1.8;color:var(--gray);min-height:44px}
+        .store-template-card .btn{width:100%;margin-top:auto}
+        .store-template-card .btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+        .template-loading{grid-column:1/-1;text-align:center;padding:35px 15px;border:1px dashed rgba(255,255,255,.18);border-radius:16px;color:var(--gray)}
+        .store-template-message{margin:14px 0;padding:13px 16px;border-radius:12px;font-size:12px;line-height:1.8;white-space:pre-line}
+        .store-template-message.success{background:rgba(39,174,96,.12);border:1px solid rgba(39,174,96,.35);color:#7be2a1}
+        .store-template-message.error{background:rgba(247,37,133,.12);border:1px solid rgba(247,37,133,.35);color:#ff9cc6}
+        .store-template-message.info{background:rgba(76,201,240,.1);border:1px solid rgba(76,201,240,.3);color:#a9eaff}
+        .template-switch-footer{display:flex;gap:9px;align-items:flex-start;color:var(--gray);font-size:11px;line-height:1.8;padding:12px 2px}
+        .template-switch-footer i{color:#4cc9f0;margin-top:3px}
+        @media(max-width:900px){.store-template-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:560px){.store-template-grid{grid-template-columns:1fr}.template-current-card{align-items:flex-start}.store-template-card p{min-height:0}}
+
+
+        /* تحسين نصوص الاشتراك والتنبيه: أسود واتجاه عربي من اليمين إلى اليسار */
+        #subscription .subscription-footnote,
+        #subscription .subscription-pricing-reference > p,
+        .template-switch-footer,
+        .template-switch-footer *,
+        .store-template-message {
+            color: #000 !important;
+            direction: rtl !important;
+            text-align: right !important;
+            unicode-bidi: plaintext;
+        }
+        .template-switch-footer {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .store-template-message {
+            direction: rtl !important;
+            text-align: right !important;
+            white-space: pre-line;
+        }
+
+    
+        /* بطاقات اتصال الدعم: الرقم في الأعلى والأيقونة تحته */
+        .about-support-numbers .about-contact-person { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:9px; min-width:185px; padding:12px 14px; border-radius:16px; background:rgba(255,255,255,.07); }
+        .about-support-numbers .about-phone-number { justify-content:center; white-space:nowrap; }
+        .about-support-numbers .about-contact-icon { display:flex; align-items:center; justify-content:center; width:60px; height:60px; min-width:60px; margin:2px auto 0; padding:0; border:2px solid rgba(255,255,255,.75); border-radius:50%; color:#fff!important; text-decoration:none; font-size:38px; line-height:1; box-shadow:0 5px 16px rgba(0,0,0,.2); transition:transform .2s ease,box-shadow .2s ease; }
+        .about-support-numbers .about-contact-icon:hover { transform:translateY(-3px) scale(1.08); box-shadow:0 7px 20px rgba(0,0,0,.3); }
+        .about-support-numbers .whatsapp-contact-icon { background:#25D366; }
+        .about-support-numbers .telegram-contact-icon { background:#229ED9; }
+
+
+        /* بطاقة الدعم في تبويب «من نحن»: الأرقام جنبًا إلى جنب ثم الأيقونات */
+        .about-subscription-contact .about-contact-layout {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:14px;
+            width:100%;
+            margin-top:18px;
+        }
+        .about-subscription-contact .about-contact-phones,
+        .about-subscription-contact .about-contact-social {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:16px;
+            width:100%;
+            flex-wrap:wrap;
+        }
+        .about-subscription-contact .about-contact-phone {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-width:210px;
+            padding:12px 18px;
+            border:1px solid rgba(255,255,255,.14);
+            border-radius:14px;
+            background:rgba(255,255,255,.09);
+            color:#fff;
+            font-weight:800;
+            font-size:clamp(16px,2.2vw,22px);
+            text-decoration:none;
+            direction:ltr;
+            transition:transform .2s ease, background .2s ease;
+        }
+        .about-subscription-contact .about-contact-phone:hover {
+            transform:translateY(-2px);
+            background:rgba(255,255,255,.15);
+        }
+        .about-subscription-contact .about-contact-social .subscription-contact-option {
+            min-width:0;
+            width:100px;
+            min-height:92px;
+            padding:10px;
+            background:transparent;
+            box-shadow:none;
+            border:0;
+        }
+        .about-subscription-contact .about-contact-social .contact-large-icon {
+            width:60px;
+            height:60px;
+            font-size:38px;
+        }
+        @media (max-width:600px) {
+            .about-subscription-contact .about-contact-phones,
+            .about-subscription-contact .about-contact-social { gap:10px; }
+            .about-subscription-contact .about-contact-phone { min-width:0; flex:1 1 145px; padding:10px 8px; font-size:15px; }
+        }
+        .subscription-contact-footer { margin:34px 0 10px; padding:24px 20px; border-radius:20px; background:linear-gradient(135deg,#171a2e,#29345b); color:#fff; box-shadow:0 12px 28px rgba(23,26,46,.2); text-align:center; direction:rtl; }
+        .subscription-contact-footer h3 { margin:0 0 6px; font-size:21px; font-weight:800; }
+        .subscription-contact-footer p { margin:0 0 18px; color:rgba(255,255,255,.78); }
+        .subscription-contact-options { display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; gap:16px; }
+        .subscription-contact-option { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-width:210px; padding:16px 22px; border:1px solid rgba(255,255,255,.18); border-radius:16px; background:rgba(255,255,255,.08); color:#fff; text-decoration:none; font-weight:800; direction:ltr; transition:transform .2s ease,background .2s ease; }
+        .subscription-contact-option .contact-large-icon { display:flex; align-items:center; justify-content:center; width:60px; height:60px; border-radius:50%; color:#fff; font-size:38px; border:2px solid rgba(255,255,255,.75); box-shadow:0 5px 16px rgba(0,0,0,.2); }
+        .subscription-contact-option.whatsapp-option .contact-large-icon { background:#25D366; }
+        .subscription-contact-option.telegram-option .contact-large-icon { background:#229ED9; }
+        .subscription-contact-option:hover { transform:translateY(-3px); background:rgba(255,255,255,.14); }
+        @media (max-width:700px) { .about-support-numbers .about-contact-person { width:100%; } .subscription-contact-footer { padding:22px 14px; } .subscription-contact-option { width:100%; min-width:0; } }
+        .about-subscription-contact { max-width: 900px; margin: 30px auto 20px; }
+        </style>
 
 <style id="mobile-full-height-modals">
 @media (max-width: 768px) {
@@ -3122,6 +3303,10 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
                         <i class="fas fa-cog"></i>
                         <span></span>
                     </li>
+                    <li class="menu-item template-switch-menu-item" onclick="switchTab('templates')">
+                        <i class="fas fa-layer-group"></i>
+                        <span>قوالب المتجر</span>
+                    </li>
                     <li class="menu-item orders-menu-item" onclick="switchTab('orders')">
                         <i class="fas fa-shopping-cart"></i>
                         <span>الطلبات</span>
@@ -3158,8 +3343,13 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
             <main class="main-content">
                 <!-- الصفحة الرئيسية -->
                 <div id="dashboard-home" class="tab-content active">
-                    <div class="content-header">
-                        <h2><i class="fas fa-tachometer-alt"></i> نظرة عامة</h2>
+                    <div class="content-header dashboard-home-heading">
+                        <div class="dashboard-home-heading-top">
+                            <h2><i class="fas fa-tachometer-alt"></i> نظرة عامة</h2>
+                            <button type="button" id="homeValidityBadge" class="home-validity-badge" onclick="switchTab('subscription')" title="عرض تفاصيل اشتراك المتجر">
+                                <i class="fas fa-hourglass-half"></i><span id="homeValidityText">مدة الصلاحية: جارٍ التحقق...</span>
+                            </button>
+                        </div>
                         <p>مرحبا بك في لوحة إنشاء المتجر الالكتروني و التحكم فيه ، هنا يمكنك إنشاء وإدارة جميع جوانب متجرك.</p>
                     </div>
                     
@@ -3601,6 +3791,39 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
                     </div>
                 </div>
 
+                <!-- قسم تغيير قالب المتجر -->
+                <div id="templates" class="tab-content">
+                    <div class="content-header">
+                        <h2><i class="fas fa-layer-group"></i> تغيير قالب المتجر</h2>
+                        <p>اختر تصميمًا آخر لمتجرك الحالي دون إنشاء بوتيك جديد. يتم تحديث واجهة المتجر المنشورة فقط، مع الاحتفاظ بملفات الإعدادات والمنتجات والطلبات.</p>
+                    </div>
+                    <div class="template-switch-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>تغيير آمن للقالب</strong>
+                            <p>لن يتم استبدال ملف الإعدادات أو لوحة الإدارة. ستتم إعادة نشر الواجهة بعد اعتماد القالب.</p>
+                        </div>
+                    </div>
+                    <div class="template-current-card">
+                        <div>
+                            <span class="template-muted-label">القالب الحالي</span>
+                            <strong id="currentStoreTemplate">جارٍ التحقق من القالب الحالي…</strong>
+                            <small id="currentStoreTemplateStatus">يتم الاتصال بخادم StoreMaster بأمان.</small>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-info" id="refreshStoreTemplatesBtn" onclick="loadStoreTemplates(true)">
+                            <i class="fas fa-sync-alt"></i> تحديث
+                        </button>
+                    </div>
+                    <div id="storeTemplateCards" class="store-template-grid">
+                        <div class="template-loading"><i class="fas fa-spinner fa-spin"></i> جاري تحميل القوالب المتاحة…</div>
+                    </div>
+                    <div id="storeTemplateMessage" class="store-template-message" role="status" aria-live="polite" style="display:none"></div>
+                    <div class="template-switch-footer">
+                        <i class="fas fa-info-circle"></i>
+                        <span>لا تُغلق الصفحة أثناء تنفيذ التغيير. قد يستغرق ظهور التصميم الجديد بضع دقائق حتى يكتمل النشر عبر السرفر.</span>
+                    </div>
+                </div>
+
                 <!-- قسم من نحن -->
                 <div id="about" class="tab-content">
                     <div class="content-header">
@@ -3636,14 +3859,17 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
                     </div>
 
                     <!-- لوحة التواصل مع الدعم -->
-                    <div class="about-support-card">
-                        <div class="about-support-icon"><i class="fas fa-headset"></i></div>
-                        <div class="about-support-content">
-                            <div class="about-support-title">contacter support</div>
-                            <div class="about-support-subtitle">للتواصل مع فريق الدعم</div>
-                            <div class="about-support-numbers">
-                                <a href="tel:0551102155"><i class="fas fa-phone-alt"></i> 0551102155</a>
-                                <a href="tel:0671466489"><i class="fas fa-phone-alt"></i> 0671466489</a>
+                    <div class="subscription-contact-footer about-subscription-contact">
+                        <h3><i class="fas fa-headset"></i> contacter support</h3>
+                        <p>للتواصل مع فريق الدعم — اختر وسيلة التواصل المناسبة</p>
+                        <div class="about-contact-layout">
+                            <div class="about-contact-phones" aria-label="أرقام الهاتف">
+                                <a class="about-contact-phone" href="tel:0671466489">0671 466 489</a>
+                                <a class="about-contact-phone" href="tel:0551102155">0551 102 155</a>
+                            </div>
+                            <div class="about-contact-social" aria-label="وسائل التواصل الاجتماعي">
+                                <a class="subscription-contact-option whatsapp-option" href="https://wa.me/213671466489" target="_blank" rel="noopener noreferrer" aria-label="واتساب 0671 466 489"><span class="contact-large-icon"><i class="fab fa-whatsapp"></i></span></a>
+                                <a class="subscription-contact-option telegram-option" href="https://t.me/+213551102155" target="_blank" rel="noopener noreferrer" aria-label="تيليغرام 0551 102 155"><span class="contact-large-icon"><i class="fab fa-telegram-plane"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -3676,7 +3902,33 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
                                 <div class="subscription-price-card" data-plan="6m"><span>6 أشهر</span><strong>5000 دج</strong></div>
                                 <div class="subscription-price-card" data-plan="12m"><span>12 شهرًا</span><strong>9000 دج</strong></div>
                             </div>
-                            <p class="subscription-footnote">يتم اختيار العرض وتجديد الاشتراك من إدارة STOREMASTER فقط. هذا القسم مخصص لعرض بيانات اشتراك متجرك.</p>
+                            <div class="subscription-payment-details" aria-label="بيانات المدير وطرق الدفع">
+                                <div class="payment-manager-row" aria-label="مدير العلامة التجارية وصاحب المتجر">
+                                    <span><i class="fas fa-store"></i> مدير العلامة التجارية</span>
+                                    <strong id="subscriptionBrandName">العلامة التجارية</strong>
+                                    <span class="subscription-owner-prefix">السيد</span>
+                                    <strong id="subscriptionManagerName">مدير المتجر</strong>
+                                    <button type="button" class="copy-payment-btn" onclick="copySubscriptionValue('subscriptionManagerName',this)" aria-label="نسخ اسم ولقب مدير المتجر" title="نسخ اسم مدير المتجر"><i class="fas fa-copy"></i></button>
+                                </div>
+                                <div class="payment-methods-row">
+                                    <span class="payment-method-chip"><i class="fas fa-check-circle"></i> BaridiMob <b>مفعّل</b></span>
+                                    <span class="payment-method-chip"><i class="fas fa-check-circle"></i> CCP <b>مفعّل</b></span>
+                                </div>
+                                <div class="payment-rip-row">
+                                    <span><i class="fas fa-university"></i> رقم RIP</span>
+                                    <strong id="subscriptionRIP" dir="ltr">00799999000648007251</strong>
+                                    <button type="button" class="copy-payment-btn" onclick="copySubscriptionValue('subscriptionRIP',this)" aria-label="نسخ رقم RIP" title="نسخ رقم RIP"><i class="fas fa-copy"></i></button>
+                                    <div class="rip-account-holder" dir="ltr"><i class="fas fa-id-card"></i> BENAKRAB Ahcene <span>(manager StoreMaster team)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subscription-contact-footer">
+                        <h3><i class="fas fa-headset"></i> التواصل مع الدعم</h3>
+                        <p>اختر وسيلة الدفع واختر وسيلة التواصل لإثبات الدفع (PDF، لقطة شاشة، وصل CCP أو أي إثبات واضح للتحويل).</p>
+                        <div class="subscription-contact-options">
+                            <a class="subscription-contact-option whatsapp-option" href="https://wa.me/213671466489" target="_blank" rel="noopener noreferrer" aria-label="واتساب 0671 466 489"><span>0671 466 489</span><span class="contact-large-icon"><i class="fab fa-whatsapp"></i></span></a>
+                            <a class="subscription-contact-option telegram-option" href="https://t.me/+213551102155" target="_blank" rel="noopener noreferrer" aria-label="تيليغرام 0551 102 155"><span>0551 102 155</span><span class="contact-large-icon"><i class="fab fa-telegram-plane"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -4192,6 +4444,22 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
             const avatarEl = document.getElementById('storeOwnerAvatar');
 
             if (nameEl) nameEl.textContent = ownerName;
+            // في بيانات الاشتراك: اسم العلامة التجارية + اسم مدير المتجر.
+            // اسم صاحب حساب RIP يبقى مستقلاً عن مدير المتجر.
+            const subscriptionManagerNameEl = document.getElementById('subscriptionManagerName');
+            if (subscriptionManagerNameEl && ownerName) {
+                subscriptionManagerNameEl.textContent = ownerName;
+            }
+            const subscriptionBrandNameEl = document.getElementById('subscriptionBrandName');
+            const brandName = String(
+                auth.storeName ||
+                auth.store?.name ||
+                (typeof CONFIG !== 'undefined' && CONFIG.STORE_INFO && CONFIG.STORE_INFO.name) ||
+                ''
+            ).trim();
+            if (subscriptionBrandNameEl && brandName) {
+                subscriptionBrandNameEl.textContent = brandName;
+            }
             if (roleEl) roleEl.textContent = 'المدير';
 
             if (avatarEl) {
@@ -7579,7 +7847,7 @@ input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus, [cont
                 <div class="action-card" style="margin-bottom:20px;">
                     <h3><i class="fas fa-shield-alt"></i> الاتصال الآمن بالسيرفر</h3>
                     <p style="margin:10px 0 18px;color:var(--gray);">
-                        الاتصال والمزامنة وتحميل الإعدادات ورفع الصور تتم عبر StoreMaster Worker باستخدام بيانات الاعتماد المحفوظة في Cloudflare.
+                        الاتصال والمزامنة وتحميل الإعدادات ورفع الصور تتم عبر StoreMaster Worker باستخدام بيانات الاعتماد المحفوظة في السرفر.
                     </p>
                     <div style="padding:15px;background:var(--light);border-radius:var(--radius);line-height:2.2;">
                         <div><strong>الحالة:</strong> ${connected ? 'متصل وآمن ✅' : 'غير متصل ⚠️'}</div>
@@ -10109,6 +10377,23 @@ function activeTab(){
 let __smSubscriptionCache = null;
 let __smSubscriptionPromise = null;
 let __smSubscriptionFetchedAt = 0;
+function updateHomeValidityBadge(d){
+  const badge=document.getElementById('homeValidityBadge');
+  const label=document.getElementById('homeValidityText');
+  if(!badge||!label||!d)return;
+  badge.className='home-validity-badge';
+  const raw=d.daysRemaining;
+  if(d.status==='not_found'||raw===null||raw===undefined||raw===''||!Number.isFinite(Number(raw))){
+    badge.classList.add('unknown'); label.textContent='مدة الصلاحية: غير متاحة'; badge.title='تعذر تحديد مدة الصلاحية'; return;
+  }
+  const days=Number(raw);
+  if(d.expired||days<0||!d.licensed){
+    badge.classList.add('expired'); label.textContent=days<0?'انتهت الصلاحية منذ '+Math.abs(days)+' يوم':'انتهت صلاحية المتجر'; badge.title='اضغط لعرض تفاصيل الاشتراك'; return;
+  }
+  if(days<7){badge.classList.add('warning');}
+  label.textContent=days===0?'الصلاحية: تنتهي اليوم':days===1?'الصلاحية: يوم واحد متبقٍ':'الصلاحية: '+days+' يومًا متبقيًا';
+  badge.title='اضغط لعرض تفاصيل الاشتراك';
+}
 async function loadSubscriptionPanel(forceRefresh=false){
   const loading=document.getElementById('subscriptionLoading');
   const content=document.getElementById('subscriptionContent');
@@ -10126,6 +10411,7 @@ async function loadSubscriptionPanel(forceRefresh=false){
     if(!__smSubscriptionCache)return false;
     // Re-render from the cached response without another HTTP request.
     const d=__smSubscriptionCache;
+    updateHomeValidityBadge(d);
     const planMap={'trial':'شهر تجريبي مجاني','3m':'3 أشهر','6m':'6 أشهر','12m':'12 شهرًا'};
     const priceMap={'trial':0,'3m':3000,'6m':5000,'12m':9000};
     const plan=d.subscriptionName||planMap[d.subscriptionPlan]||'غير مسجل';
@@ -10200,6 +10486,7 @@ async function loadSubscriptionPanel(forceRefresh=false){
     }
     if (!response.ok || data.success !== true) throw new Error(data.error || ('تعذر تحميل بيانات الاشتراك (HTTP ' + response.status + ').'));
     data.__host=host; __smSubscriptionCache=data; __smSubscriptionFetchedAt=Date.now();
+    updateHomeValidityBadge(data);
     const planMap={'trial':'شهر تجريبي مجاني','3m':'3 أشهر','6m':'6 أشهر','12m':'12 شهرًا'};
     const priceMap={'trial':0,'3m':3000,'6m':5000,'12m':9000};
     const plan=data.subscriptionName||planMap[data.subscriptionPlan]||'غير مسجل';
@@ -10242,6 +10529,23 @@ async function loadSubscriptionPanel(forceRefresh=false){
   }})();
   try{return await __smSubscriptionPromise;}finally{clearTimeout(__smLoadingWatchdog);__smSubscriptionPromise=null;}
 }
+
+window.copySubscriptionValue = async function(elementId, button){
+  const node=document.getElementById(elementId);
+  if(!node)return;
+  const value=(node.textContent||"").trim();
+  try{
+    await navigator.clipboard.writeText(value);
+    const old=button?button.innerHTML:"";
+    if(button){button.innerHTML='<i class="fas fa-check"></i>';button.classList.add("copied");}
+    if(typeof notify==="function")notify("تم النسخ بنجاح.","success");
+    if(button)setTimeout(()=>{button.innerHTML=old;button.classList.remove("copied");},1400);
+  }catch(e){
+    const area=document.createElement("textarea");area.value=value;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();
+    const ok=document.execCommand("copy");area.remove();
+    if(typeof notify==="function")notify(ok?"تم النسخ بنجاح.":"تعذر النسخ تلقائيًا، يرجى نسخ النص يدويًا.",ok?"success":"warning");
+  }
+};
 
 // Expose the subscription loader: it is defined inside this IIFE, but the dashboard
 // initialization and switchTab handlers call it from outside this scope.
@@ -11114,6 +11418,125 @@ window.caClearSessionDateFilter=function(){
 
 
 
+
+
+<script>
+/* StoreMaster Template Switcher — authenticated requests only; no GitHub credentials in browser. */
+(function(){
+  const templateDescriptions = {
+    template1: "قالب Dawn DZ — التصميم الأول المتاح في منظومة StoreMaster.",
+    template2: "قالب ShopLive — تصميم بديل لمتجرك الحالي.",
+    template3: "قالب Hassoun — تصميم بديل لمتجرك الحالي."
+  };
+  const templateIcons = {template1:"fa-store",template2:"fa-bag-shopping",template3:"fa-wand-magic-sparkles"};
+  let templateState = {current:"", choices:[], busy:false};
+
+  function el(id){return document.getElementById(id)}
+  function notifyTemplate(message,type){
+    const box=el("storeTemplateMessage");
+    if(!box)return;
+    box.className="store-template-message "+(type||"info");
+    box.textContent=message;
+    box.style.display="block";
+  }
+  async function templateRequest(path,payload){
+    const auth=typeof smGetSession==="function"?smGetSession():null;
+    if(!auth||!auth.session) throw new Error("جلسة الإدارة غير متاحة. سجّل الدخول من جديد.");
+    const base=typeof smWorkerBase==="function"?smWorkerBase():"";
+    if(!base) throw new Error("رابط Worker غير مضبوط في إعدادات لوحة التحكم.");
+    const response=await fetch(base+path,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({...payload,session:auth.session}),
+      cache:"no-store"
+    });
+    const data=await response.json().catch(()=>({}));
+    if(!response.ok||!data.success) throw new Error(data.error||"تعذر تنفيذ طلب القوالب.");
+    return data;
+  }
+  function escapeTemplateText(value){
+    return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+  }
+  function renderTemplateCards(){
+    const host=el("storeTemplateCards");
+    if(!host)return;
+    if(!templateState.choices.length){
+      host.innerHTML='<div class="template-loading">لم يعرض الخادم أي قوالب متاحة.</div>';
+      return;
+    }
+    host.innerHTML=templateState.choices.map(t=>{
+      const id=String(t.id||"");
+      const current=id===templateState.current;
+      const name=escapeTemplateText(t.name||id);
+      const description=escapeTemplateText(templateDescriptions[id]||"قالب متاح في منظومة StoreMaster.");
+      const icon=templateIcons[id]||"fa-layer-group";
+      return `<article class="store-template-card ${current?"is-current":""}">
+        <div class="store-template-card-head">
+          <div class="store-template-icon"><i class="fas ${icon}"></i></div>
+          <div><h3>${name}</h3><div class="template-id">${escapeTemplateText(id)}</div></div>
+        </div>
+        <p>${description}</p>
+        <button type="button" class="btn ${current?"btn-info":"btn-primary"} ${templateState.busy&&!current?"template-switch-loading":""}" ${current||templateState.busy?"disabled":""} onclick="switchStoreTemplate('${escapeTemplateText(id)}','${name.replace(/'/g,"&#39;")}')">
+          ${templateState.busy&&!current?'<span class="loading template-spinner"></span> جارٍ تطبيق القالب…':`<i class="fas ${current?"fa-check":"fa-swatchbook"}"></i> ${current?"القالب الحالي":"اعتماد هذا القالب"}`}
+        </button>
+      </article>`;
+    }).join("");
+  }
+  window.loadStoreTemplates=async function(showRefreshNotice){
+    const host=el("storeTemplateCards"), current=el("currentStoreTemplate"), status=el("currentStoreTemplateStatus");
+    if(templateState.busy)return;
+    if(host)host.innerHTML='<div class="template-loading"><i class="fas fa-spinner fa-spin"></i> جاري تحميل القوالب المتاحة…</div>';
+    if(current)current.textContent="جارٍ التحقق من القالب الحالي…";
+    try{
+      const data=await templateRequest("/api/admin/templates",{});
+      templateState.current=String(data.currentTemplate||"");
+      templateState.choices=Array.isArray(data.templates)?data.templates:[];
+      const currentObj=templateState.choices.find(t=>t.id===templateState.current);
+      if(current)current.textContent=currentObj?(currentObj.name||currentObj.id):"غير محدد";
+      if(status)status.textContent="تم التحقق من القالب المحفوظ في خادم StoreMaster.";
+      renderTemplateCards();
+      if(showRefreshNotice)notifyTemplate("تم تحديث قائمة القوالب وحالة المتجر.","success");
+    }catch(err){
+      if(current)current.textContent="تعذر التحقق";
+      if(status)status.textContent="تحقق من نشر نسخة Worker التي تدعم تغيير القوالب.";
+      if(host)host.innerHTML='<div class="template-loading"><i class="fas fa-triangle-exclamation"></i><br>تعذر تحميل القوالب من الخادم.</div>';
+      notifyTemplate(err.message||"تعذر تحميل القوالب.", "error");
+    }
+  };
+  window.switchStoreTemplate=async function(templateId,templateName){
+    if(templateState.busy)return;
+    if(templateId===templateState.current)return;
+    const confirmed=window.confirm("هل تريد اعتماد القالب «"+templateName+"» لهذا المتجر؟\n\nسيتم تحديث index.html فقط ثم تشغيل النشر عبر السرفر. ستبقى إعدادات المتجر والمنتجات والطلبات دون تغيير.");
+    if(!confirmed)return;
+    templateState.busy=true;
+    const message=el("storeTemplateMessage");
+    if(message){message.style.display="none"}
+    renderTemplateCards();
+    try{
+      const data=await templateRequest("/api/admin/template-switch",{template:templateId});
+      templateState.current=String(data.currentTemplate||templateId);
+      const current=el("currentStoreTemplate"),status=el("currentStoreTemplateStatus");
+      const currentObj=templateState.choices.find(t=>t.id===templateState.current);
+      if(current)current.textContent=currentObj?(currentObj.name||currentObj.id):templateName;
+      if(status)status.textContent=data.deploymentTriggered?"تم إرسال طلب النشر إلى السرفر.":"تم حفظ القالب؛ تحقق من حالة النشر.";
+      notifyTemplate((data.message||"تم اعتماد القالب الجديد.")+"\n"+(data.note||"قد يستغرق ظهور التصميم الجديد بضع دقائق."),"success");
+    }catch(err){
+      notifyTemplate(err.message||"فشل تغيير القالب. لم يتم تأكيد التغيير.","error");
+    }finally{
+      templateState.busy=false;
+      renderTemplateCards();
+    }
+  };
+  const previousSwitchTab=window.switchTab;
+  if(typeof previousSwitchTab==="function"){
+    window.switchTab=function(tabName){
+      const result=previousSwitchTab.apply(this,arguments);
+      if(tabName==="templates") setTimeout(()=>window.loadStoreTemplates(false),60);
+      return result;
+    };
+  }
+})();
+</script>
 
 </body>
 </html>
